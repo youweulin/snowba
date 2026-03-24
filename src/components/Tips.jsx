@@ -1,11 +1,14 @@
-import { motion } from 'framer-motion'
-import { Share2, Clock, ArrowRight, CheckCircle } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Share2, Clock, ArrowRight, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import { tips, instructorGuide } from '../data/destinations'
 import InstructorCompare from './InstructorCompare'
 
 function TipCard({ tip, index }) {
+  const [expanded, setExpanded] = useState(false)
   const Icon = Icons[tip.icon] || Icons.Snowflake
+  const hasPoints = tip.points && tip.points.length > 0
 
   const handleShare = async () => {
     const shareData = {
@@ -25,7 +28,7 @@ function TipCard({ tip, index }) {
 
   return (
     <motion.div
-      className="tip-card glass"
+      className={`tip-card glass ${expanded ? 'tip-card-expanded' : ''}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -42,14 +45,47 @@ function TipCard({ tip, index }) {
       </div>
       <h3>{tip.title}</h3>
       <p>{tip.summary}</p>
+
+      <AnimatePresence>
+        {expanded && hasPoints && (
+          <motion.div
+            className="tip-detail"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <p className="tip-detail-intro">{tip.content}</p>
+            <div className="tip-points">
+              {tip.points.map((pt, i) => (
+                <div key={i} className="tip-point">
+                  <div className="tip-point-header">
+                    <CheckCircle size={14} />
+                    <strong>{pt.title}</strong>
+                  </div>
+                  <p>{pt.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="tip-footer">
         <span className="tip-time">
           <Clock size={14} />
           {tip.readTime}
         </span>
-        <button className="tip-more">
-          閱讀更多 <ArrowRight size={14} />
-        </button>
+        {hasPoints ? (
+          <button className="tip-more" onClick={() => setExpanded(!expanded)}>
+            {expanded ? '收起' : '閱讀更多'}{' '}
+            {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+        ) : (
+          <button className="tip-more" onClick={() => setExpanded(!expanded)}>
+            閱讀更多 <ArrowRight size={14} />
+          </button>
+        )}
       </div>
     </motion.div>
   )

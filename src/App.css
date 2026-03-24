@@ -777,6 +777,294 @@
   color: var(--primary);
 }
 
+.tip-card-expanded {
+  grid-column: 1 / -1;
+}
+
+.tip-detail {
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.tip-detail-intro {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.tip-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.tip-point {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+}
+
+.tip-point-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.tip-point-header svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.tip-point-header strong {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.tip-point p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ========== Itineraries ========== */
+.itin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.itin-card {
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.itin-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.itin-header {
+  margin-bottom: 1.25rem;
+}
+
+.itin-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.itin-title {
+  font-size: 1.25rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.itin-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.itin-budget {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(14, 165, 233, 0.08);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+}
+
+.itin-budget svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.itin-budget strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.itin-budget span {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.itin-accom {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 1rem;
+}
+
+.itin-accom h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.itin-accom h4 svg {
+  color: var(--secondary);
+}
+
+.itin-accom-price {
+  font-size: 0.78rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.itin-accom-highlights {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.itin-accom-highlights li {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding: 0.15rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.itin-accom-highlights li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.itin-accom-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.itin-accom-link:hover {
+  text-decoration: underline;
+}
+
+.itin-alts {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.itin-alts-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.itin-alt-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  padding: 0.15rem 0.5rem;
+  margin: 0.15rem 0.15rem 0.15rem 0;
+  border-radius: 0.3rem;
+  border: 1px solid var(--glass-border);
+}
+
+.itin-expand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 0.5rem;
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.itin-expand:hover {
+  background: rgba(14, 165, 233, 0.15);
+}
+
+.itin-days {
+  margin-top: 1rem;
+}
+
+.itin-day {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--glass-border);
+}
+
+.itin-day:last-child {
+  margin-bottom: 0;
+}
+
+.itin-day-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.itin-day-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--secondary);
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.itin-day-header strong {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.itin-day-items {
+  list-style: none;
+}
+
+.itin-day-items li {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding: 0.2rem 0;
+  padding-left: 0.75rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.itin-day-items li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
 /* ========== Instructor Compare ========== */
 .ic-grid {
   display: grid;
