@@ -857,6 +857,284 @@ export const destinations = [
   },
 ]
 
+// 各雪場滑雪學校/課程價格（依雪場 ID 索引）
+export const skiSchools = {
+  // ① 新雪谷 比羅夫
+  1: {
+    schoolUrl: 'https://www.grand-hirafu.jp/en/schools/niseko-tokyu-grand-hirafu-ski-school/',
+    groupFullDay: '¥15,000/人（4小時），最多 4 人/班',
+    groupHalfDay: '¥9,000/人（2小時），最多 4 人/班',
+    privatePrices: [
+      { persons: '1人起', twoHr: '¥33,000起', fourHr: '¥54,000起' },
+    ],
+    privateMax: null,
+    kids: '幼兒(3-5歲) 私人 2hr ¥33,000起 / 兒童團體(4-6歲) 2hr ¥10,000、4hr ¥16,000',
+    languages: ['日語（團體）', '日語・英語（私人）'],
+    notes: '團體課 1/5～3/31 開課。私人課 11/29～5/6。費用不含纜車券',
+  },
+  // ② 留壽都
+  2: {
+    schoolUrl: 'https://rusutsu.com/ski-lessons/',
+    groupFullDay: '¥8,700/人（4小時，等級別課程）',
+    groupHalfDay: '¥5,300/人（2小時）',
+    privatePrices: [
+      { persons: '1-4人', twoHr: '¥26,500', fourHr: '¥42,400（含餐 ¥51,000）' },
+    ],
+    privateMax: 4,
+    kids: 'Samurai Kids(4-7歲) 150min ¥17,000起 / 300min含餐 ¥24,000起（最多6人/班）',
+    languages: ['日語', '英語（國際校）', '★中文（粉雪天堂 Konayuki 滑雪學校）'],
+    notes: '★ 留壽都有官方認證中文滑雪學校「粉雪天堂 Konayuki」！價格分通常期/年末期/春季期三段',
+  },
+  // ③ 安努普利
+  3: {
+    schoolUrl: 'https://nassmiyata.wixsite.com/nass-eng',
+    groupFullDay: '¥8,000/人（一日課程）',
+    groupHalfDay: '洽詢',
+    privatePrices: [
+      { persons: '1人起', twoHr: '¥40,000', fourHr: '¥60,000' },
+    ],
+    privateMax: null,
+    kids: 'Mini Kids(3-6歲) 私人 2hr 可最多3位小朋友',
+    languages: ['日語（團體）', '日語・英語（私人）'],
+    notes: 'SAJ/SIA/JSBA 認證，38年在地經驗。★ 二世谷地區價格最實惠的學校',
+  },
+  // ④ 札幌手稻
+  4: {
+    schoolUrl: 'https://sapporo-teine.com/snow/school',
+    groupFullDay: '¥11,000（4小時，上下午各2hr）',
+    groupHalfDay: '洽詢',
+    privatePrices: [
+      { persons: '1人', twoHr: '¥19,000', fourHr: '¥28,000' },
+      { persons: '2人', twoHr: '¥29,000', fourHr: '¥36,000' },
+      { persons: '3人', twoHr: '¥36,000', fourHr: '¥45,000' },
+      { persons: '4人', twoHr: '¥43,000', fourHr: '¥54,000' },
+    ],
+    privateMax: 4,
+    kids: '有兒童課程（高中生以下）& 幼兒私人課',
+    languages: ['日語'],
+    notes: '費用含纜車，器材租借另付',
+  },
+  // ⑥ 喜樂樂
+  6: {
+    schoolUrl: 'https://www.kiroro.co.jp/ski_lessons/',
+    groupFullDay: '¥10,000～11,000（4小時）',
+    groupHalfDay: '¥7,000～7,500（2小時）',
+    privatePrices: [
+      { persons: '1-4人（日語）', twoHr: '¥31,000', fourHr: '¥45,000' },
+      { persons: '1-4人（英語/中文）', twoHr: '洽詢', fourHr: '約¥80,000' },
+    ],
+    privateMax: 6,
+    kids: '滑雪 3-12歲 / 單板 7-12歲（含纜車券+安全帽），網路預約享 10% OFF',
+    languages: ['日語', '英語', '中文（普通話）'],
+    notes: '★ 北海道少數提供正式中文課程的度假村！網路預約一般課程享 5% OFF',
+  },
+  // ⑦ 札幌國際
+  7: {
+    schoolUrl: 'https://www.sapporo-kokusai.jp/school/',
+    groupFullDay: '¥8,000（4小時）',
+    groupHalfDay: '¥6,000（2小時）',
+    privatePrices: [
+      { persons: '1人', twoHr: '¥20,000', fourHr: '¥28,000' },
+      { persons: '2人', twoHr: '¥27,000', fourHr: '¥37,000' },
+      { persons: '3人', twoHr: '¥34,000', fourHr: '¥46,000' },
+    ],
+    privateMax: 3,
+    kids: '3日集中營隊 ¥34,800～39,800（含纜車、午餐、保險）',
+    languages: ['日語'],
+    notes: '含租借套餐：2hr ¥12,000 / 4hr ¥14,000',
+  },
+  // ⑧ TOMAMU
+  8: {
+    schoolUrl: 'https://www.snowtomamu.jp/winter/ski/academy/',
+    groupFullDay: '上下午各 120 分鐘分開報名，A期 ¥7,800/次、B期 ¥6,800/次',
+    groupHalfDay: '120 分鐘 ¥6,800～7,800（依時期）',
+    privatePrices: [
+      { persons: '1人', twoHr: 'A期 ¥27,800 / B期 ¥26,300 / C期 ¥25,300', fourHr: '×2' },
+    ],
+    privateMax: 5,
+    kids: '4-6歲「雪ッズ(Yukids)」團體課 / 3歲有專屬課程 / 7-12歲獨立班',
+    languages: ['日語', '部分英語/中文私人課'],
+    notes: '分 A期(12/13-3/8)、B期(12/6-12/12 & 3/9-4/5)、C期(12/1-12/5) 三種價格。網路預約有折扣',
+  },
+  // ⑨ 盤溪
+  9: {
+    schoolUrl: 'https://bankei-ski.com/',
+    groupFullDay: '¥5,000～6,000（4小時，含纜車）',
+    groupHalfDay: '¥3,500～4,200（2小時，含纜車）',
+    privatePrices: [
+      { persons: '1人', twoHr: '¥15,000', fourHr: '¥20,000' },
+      { persons: '2人', twoHr: '¥20,000', fourHr: '¥30,000' },
+    ],
+    privateMax: 3,
+    kids: '私人課 3歲起 / 團體課 4歲起 / 冬假有4-5日營隊',
+    languages: ['日語'],
+    notes: '★ 所有課程含纜車費！札幌最便宜的滑雪學校之一',
+  },
+  // ⑩ 藻岩山
+  10: {
+    schoolUrl: 'https://sapporo-moiwa.jp/school/',
+    groupFullDay: '¥5,000（SAJ會員 ¥4,500）',
+    groupHalfDay: '¥3,500（SAJ會員 ¥3,200）',
+    privatePrices: [
+      { persons: '洽詢', twoHr: '洽詢', fourHr: '洽詢' },
+    ],
+    privateMax: null,
+    kids: '有兒童3日集中課程（含接送巴士、纜車、午餐、保險）',
+    languages: ['日語'],
+    notes: '場內多間獨立學校：藻岩山スキー学校、マミスキースクール、玉越プロ等。時段：上午 10-12 / 下午 13-15 / 夜間 19-20:45',
+  },
+  // ⑤ 新雪谷村
+  5: {
+    schoolUrl: 'https://www.niseko-village.com/white-season/',
+    groupFullDay: '¥21,000/人（4小時），最多 8 人/班',
+    groupHalfDay: '上午 ¥14,000 / 下午 ¥15,000（2小時）',
+    privatePrices: [
+      { persons: '1-4人', twoHr: '—', fourHr: '¥70,000' },
+      { persons: '兒童私人', twoHr: '¥36,000', fourHr: '¥64,000' },
+    ],
+    privateMax: 4,
+    kids: '兒童團體課(6-12歲) 滑雪6歲起/單板7歲起',
+    languages: ['日語', '英語'],
+    notes: '須於課程 7 天前完成線上登記。團體課 12/6～3/15。私人課 11/29～4/5',
+  },
+  // ⑫ 卡露魯斯溫泉
+  12: {
+    schoolUrl: 'https://sanlaiva.com/school',
+    groupFullDay: '洽詢（小型地方雪場）',
+    groupHalfDay: '洽詢',
+    privatePrices: [],
+    privateMax: null,
+    kids: '有滑雪教室',
+    languages: ['日語'],
+    notes: '具體價格請電洽 0143-84-2872',
+  },
+  // ⑬ 朝里川溫泉
+  13: {
+    schoolUrl: 'https://asari-ski.com/lesson/',
+    groupFullDay: '¥30,000～40,000/整組（非每人，2-4人初級 ¥40,000、中級以上 ¥30,000）',
+    groupHalfDay: '¥20,000～30,000/整組',
+    privatePrices: [
+      { persons: '2-4人（初級）', twoHr: '半日 ¥30,000/組', fourHr: '全日 ¥40,000/組' },
+      { persons: '2-10人（中級+）', twoHr: '半日 ¥20,000/組', fourHr: '全日 ¥30,000/組' },
+    ],
+    privateMax: 10,
+    kids: '洽詢',
+    languages: ['日語'],
+    notes: '⚠️ 價格為整組價（非每人）。繁忙期加價：12/28-1/13 +¥5,000、2/8-2/16 +¥10,000',
+  },
+  // ⑮ 王朝
+  15: {
+    schoolUrl: 'https://dynasty-resort.jp/school/',
+    groupFullDay: '4日營隊 ¥13,800（含纜車、保險，每日 10:00-14:00 實質3hr）',
+    groupHalfDay: '無單日散客課程',
+    privatePrices: [],
+    privateMax: null,
+    kids: '營隊適用兒童',
+    languages: ['日語'],
+    notes: '由「北広島スキースクール21」(SIA公認校)營運，以多日制營隊為主',
+  },
+  // ⑭ HANAZONO (NISS)
+  14: {
+    schoolUrl: 'https://hanazononiseko.com/en/winter/ski-school',
+    groupFullDay: '全日制（10:00-15:30 含午餐券），最多 4 人/班，價格依淡旺季',
+    groupHalfDay: '無獨立半日團體課（僅全日制）',
+    privatePrices: [
+      { persons: '1-6人（價格相同）', twoHr: '半日(2.5hr) ¥42,000起', fourHr: '全日(6hr) ¥85,000起' },
+    ],
+    privateMax: 6,
+    kids: 'Tic Tac(3-6歲) & Yuki(7-14歲)：淡季 ¥31,000/日、旺季 ¥36,000/日',
+    languages: ['英語為主', '多語言教練'],
+    notes: '★ 私人課最多 6 人共享同一教練，價格不變！Level 5 以上須上私人課。9:45am Hanazono 308 報到',
+  },
+  // ⑯ 藤野
+  16: {
+    schoolUrl: 'https://www.fujino-yagai-sports.jp/school',
+    groupFullDay: '¥7,000（4小時）',
+    groupHalfDay: '¥5,000（2小時）/ 體驗課程 1.5hr ¥6,900',
+    privatePrices: [
+      { persons: '1人', twoHr: '¥17,500', fourHr: '¥23,000' },
+      { persons: '親子(最多4人)', twoHr: '¥22,000', fourHr: '¥25,000' },
+    ],
+    privateMax: 3,
+    kids: '有3日集中課程 ¥33,110～36,410 / 週末兒童會員課程',
+    languages: ['日語'],
+    notes: '市營設施，價格親民。親子課程很超值！',
+  },
+  // ⑱ 十勝佐幌
+  18: {
+    schoolUrl: 'https://sahoro-resort.com/winter/ski/school',
+    groupFullDay: '年會費制：全日 大人 ¥1,000 / 兒童 ¥500（超值！）',
+    groupHalfDay: '年會費制：半日 大人 ¥500 / 兒童 ¥250',
+    privatePrices: [
+      { persons: '洽詢', twoHr: '洽詢', fourHr: '洽詢' },
+    ],
+    privateMax: null,
+    kids: '小學生以上可參加',
+    languages: ['日語'],
+    notes: '★ 加入年會費後課程超便宜！纜車另購但有學校特別價（1日 ¥4,000～4,400）',
+  },
+  // ⑲ 富良野
+  19: {
+    schoolUrl: 'https://www.princehotels.co.jp/ski/furano/winter/school/',
+    groupFullDay: '上下午各 2hr 分開報名（富良野スキー学校），洽詢價格',
+    groupHalfDay: '2小時一單元',
+    privatePrices: [
+      { persons: '1人（Whiteroom英語）', twoHr: '—', fourHr: '半日約 ¥50,000～60,000' },
+    ],
+    privateMax: 6,
+    kids: '★ パンダルマン兒童學校（3-9歲）120min ¥19,000起 / 240min ¥33,000起（含兒童雪具）',
+    languages: ['日語', '英語（Furano Snow School / Whiteroom）'],
+    notes: '場內多間學校可選。パンダルマン兒童學校非常受歡迎要提早預約。小學生以下纜車免費！',
+  },
+  // ⑳ 神居
+  20: {
+    schoolUrl: 'https://www.kamui-skilinks.com/school/',
+    groupFullDay: '洽詢（SAJ公認旭川カムイスキー学校）',
+    groupHalfDay: '洽詢',
+    privatePrices: [],
+    privateMax: null,
+    kids: '5歲（年中）以上',
+    languages: ['日語', '英語（Kamui International School）'],
+    notes: '另有三浦雄一郎 & Snow Dolphin 粉雪專門課程',
+  },
+  // ㉑ 比布
+  21: {
+    schoolUrl: 'https://www.town.pippu.hokkaido.jp/ski/lesson.html',
+    groupFullDay: '洽詢',
+    groupHalfDay: '單板 1.5hr ¥5,500',
+    privatePrices: [
+      { persons: '1人（滑雪）', twoHr: '¥6,000', fourHr: '—' },
+      { persons: '2人+（滑雪）', twoHr: '¥4,000/人', fourHr: '—' },
+    ],
+    privateMax: null,
+    kids: '5歲以上可參加（¥6,000/2hr）',
+    languages: ['日語'],
+    notes: '★ 私人課 ¥6,000/2hr 是北海道最便宜等級！另有コブ專門課程',
+  },
+  // ㉒ 聖誕老人公園
+  22: {
+    schoolUrl: 'https://www.asahikawasantapresentpark.com/cont1/13.html',
+    groupFullDay: '洽詢（下載官網PDF小冊子）',
+    groupHalfDay: '洽詢',
+    privatePrices: [],
+    privateMax: null,
+    kids: '有兒童課程',
+    languages: ['日語'],
+    notes: '提供初中上級共6種課程，具體價格請下載官網PDF',
+  },
+  // ㉓ 函館七飯
+  23: {
+    schoolUrl: 'https://hakodate-nanae.jp/winter/school/',
+    groupFullDay: '洽詢（3間學校進駐：七飯スキー学校、Let\'s Ski School 等）',
+    groupHalfDay: '洽詢',
+    privatePrices: [],
+    privateMax: null,
+    kids: '有兒童課程',
+    languages: ['日語'],
+    notes: '少人數制教學，依程度分班。詳洽 0138-67-3355',
+  },
+}
+
 export const tips = [
   {
     id: 1,
@@ -1067,30 +1345,89 @@ export const instructorGuide = {
       id: 'english',
       lang: '英文教練',
       flag: '🇬🇧',
-      priceRange: '¥10,000 ～ ¥18,000 / 半天',
-      pros: ['溝通較順暢', '教學風格活潑彈性', '新雪谷等國際雪場選擇多', '多持有國際證照（NZSIA/CSIA/BASI）'],
-      cons: ['價格較高', '旺季很搶手需提早預約', '非國際雪場選擇少'],
+      priceRange: '¥42,000 ～ ¥85,000 / 全天（私人）',
+      pros: ['溝通較順暢', '教學風格活潑彈性', '新雪谷等國際雪場選擇多', '多持有國際證照（NZSIA/CSIA/BASI）', 'HANAZONO 私人課最多6人同價'],
+      cons: ['私人課其實也很貴（半日 ¥42,000 起）', '旺季很搶手需提早預約', '非國際雪場選擇極少', '團體課多為全日制（¥15,000～21,000/人）'],
       bestFor: '英文流利者、在新雪谷/留壽都/喜樂樂等國際雪場',
-      booking: 'NISS（Niseko International Snowsports School）、GoSnow、各度假村官方英語課程',
-      notes: '新雪谷地區英語教練密度最高，HANAZONO 及 Grand Hirafu 皆有大型英語滑雪學校。私人課可 1-5 人共享，人越多每人越便宜。',
+      booking: 'NISS（HANAZONO 官方，私人課半日 ¥42,000起）/ Niseko Village Snow School（私人4hr ¥70,000）/ Pinnacle Snowsports / GoSnow',
+      notes: '英文教練私人課半日(2.5hr) ¥42,000～全日(6hr) ¥85,000，比日文貴不少但比中文便宜。HANAZONO NISS 的私人課最多 6 人共享同一價格不變，6人分攤只要每人 ¥7,000～14,000，是最划算的方式。團體課(最多4-8人) ¥14,000～21,000/人/全日。',
     },
     {
       id: 'chinese',
-      lang: '中文教練',
+      lang: '中文教練（台灣人）',
       flag: '🇹🇼',
-      priceRange: '¥12,000 ～ ¥25,000 / 半天',
+      priceRange: '¥60,000 ～ ¥90,000+ / 全天',
       pros: ['零語言障礙', '了解台灣人滑雪痛點', '教學解釋最到位', '可協助翻譯雪場資訊'],
-      cons: ['價格最高', '數量最少需提早預約', '集中在新雪谷與富良野', '旺季（春節/寒假）幾乎秒殺'],
+      cons: ['價格非常高（北海道全天約台幣 15,000～22,000 元）', '數量極少需提早 1-3 個月預約', '旺季（春節/寒假）幾乎秒殺', '僅集中在新雪谷、留壽都、手稻、TOMAMU 等雪場'],
       bestFor: '完全初學者、想快速進步者、帶小朋友學滑雪的家庭',
-      booking: '透過 IG/FB 社群搜尋「北海道中文滑雪教練」、Snowba 平台預約、或各雪場中文服務窗口',
-      notes: '中文教練多為台灣人或在日華人，持有 SAJ/SIA/CASI 等證照。建議至少提前 1-2 個月預約，春節期間更要提前 3 個月。私人課通常 1-4 人，也有小團體班 4-6 人。',
+      booking: '追雪 Chase for Snow（二世谷官方認證）/ Jstyle 中文滑雪學校（手稻・TOMAMU・留壽都）/ MY CASA（札幌國際）/ 雪浪 Snow and Flow / Pinnacle Snowsports / Klook・KKday 線上預約',
+      notes: '北海道中文教練全天私人課約 ¥80,000～90,000（1對1），每加1人加 ¥5,000，最多約 4-6 人。半天(3hr)約 ¥40,000～55,000。旺季更貴。費用僅含教學，纜車票、裝備、保險另計。建議多人分攤費用最划算（4人分攤≈每人 ¥20,000～25,000/全天）。',
+      schools: [
+        { name: '追雪 Chase for Snow', url: 'https://chaseforsnow.com/', areas: '二世谷・留壽都・喜樂樂・手稻', cert: '二世谷官方認證，Level 3 單板 + Level 4 雙板中文教練' },
+        { name: 'Jstyle 中文滑雪學校', url: 'https://www.jstyleski.com/', areas: 'TOMAMU・手稻・二世谷・留壽都・藏王', cert: '雪場官方合作' },
+        { name: 'MY CASA 滑雪學校', url: 'https://www.mycasa.jp/', areas: '札幌國際・手稻', cert: '國際+日本 SAJ/JSBA 認證' },
+        { name: '雪浪 Snow and Flow', url: 'https://www.snowandflow.com/', areas: '二世谷・留壽都・札幌・手稻・小樽・喜樂樂', cert: '中文/粵語/英文教學' },
+        { name: 'Pinnacle Snowsports', url: 'https://pinnacle-snow.com/', areas: '二世谷', cert: '二世谷官方認證' },
+      ],
     },
   ],
   tips: [
     '初學者第一次強烈建議請教練，自學容易養成壞習慣且有安全風險',
-    '團體課（6-10人）最便宜但進度跟著全班走，私人課（1-4人）貴但效率最高',
     '半天課（2-3小時）足夠初學者消化，全天課（4-6小時）適合想密集進步者',
     '多人共請一位私人教練可大幅降低每人費用（4人分攤幾乎等同團體課價格）',
     '旺季（12月底～1月初、春節）教練極度搶手，務必提早預約',
+  ],
+  // 教練人數 vs 學習效率建議
+  groupSizeGuide: [
+    {
+      size: '1 對 1',
+      emoji: '🥇',
+      efficiency: 100,
+      label: '學習效率最高',
+      color: '#22c55e',
+      bestFor: '完全初學者第一次上課、矯正動作壞習慣、進階技術突破',
+      detail: '教練全程盯著你一個人，即時糾正每個動作細節。第一次上雪板時，教練需要隨時在旁扶持、觀察重心，1對1 是最安全也最快學會的方式。',
+      recommendation: '★ 強烈推薦',
+    },
+    {
+      size: '1 對 2',
+      emoji: '🥈',
+      efficiency: 85,
+      label: 'CP值最佳',
+      color: '#3b82f6',
+      bestFor: '情侶、好友、親子（程度相近的兩人）',
+      detail: '教練可以交替指導，一人練習時另一人接受指導，節奏剛好。費用減半但學習效率僅降一點點，是多數人的最佳選擇。',
+      recommendation: '★ 最推薦的組合',
+    },
+    {
+      size: '1 對 3-4',
+      emoji: '🥉',
+      efficiency: 65,
+      label: '小團體',
+      color: '#eab308',
+      bestFor: '朋友同行、家庭出遊、有基礎想精進者',
+      detail: '教練輪流指導，每人被關注的時間減少。需要所有人程度相近，否則快的等慢的。適合已經會基本煞車轉彎、想一起進步的小團體。',
+      recommendation: '適合有基礎者',
+    },
+    {
+      size: '1 對 5-6',
+      emoji: '⚠️',
+      efficiency: 40,
+      label: '效率開始下降',
+      color: '#f97316',
+      bestFor: '預算有限、已有基礎只需點撥的中級者',
+      detail: '教練無法兼顧每個人，大部分時間在自主練習。程度差異會更明顯，初學者容易被忽略。但 HANAZONO NISS 6人同價，若全員中級以上仍可考慮。',
+      recommendation: '不建議初學者',
+    },
+    {
+      size: '1 對 7 人以上',
+      emoji: '❌',
+      efficiency: 25,
+      label: '團體課模式',
+      color: '#ef4444',
+      bestFor: '極度預算導向、只想體驗滑雪氛圍',
+      detail: '等同團體課，教練只能做大方向示範，無法逐一糾正。初學者很容易養成錯誤姿勢。進度被最慢的人拖住。如果你認真想學會滑雪，避開超過6人的班。',
+      recommendation: '不推薦',
+    },
   ],
 }

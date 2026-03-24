@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   MapPin, Star, Share2, Mountain, Navigation, Bus, BedDouble, Sparkles,
-  ExternalLink, Snowflake, Ticket, ShirtIcon, Globe, Calendar,
+  ExternalLink, Snowflake, Ticket, ShirtIcon, Globe, Calendar, GraduationCap,
 } from 'lucide-react'
-import { destinations, areas } from '../data/destinations'
+import { destinations, areas, skiSchools } from '../data/destinations'
 
 function DestinationCard({ d, index }) {
   const [expanded, setExpanded] = useState(false)
@@ -123,6 +123,26 @@ function DestinationCard({ d, index }) {
                 <p>{d.snowfall}</p>
               </div>
             )}
+            {skiSchools[d.id] && (
+              <div className="dest-detail-section">
+                <h4><GraduationCap size={14} /> 滑雪學校</h4>
+                <p>團體課全日：{skiSchools[d.id].groupFullDay}</p>
+                <p>團體課半日：{skiSchools[d.id].groupHalfDay}</p>
+                {skiSchools[d.id].privatePrices?.length > 0 && (
+                  <div className="dest-school-private">
+                    <p><strong>私人課：</strong></p>
+                    {skiSchools[d.id].privatePrices.map((p, i) => (
+                      <p key={i}>{p.persons}：2hr {p.twoHr} / 4hr {p.fourHr}</p>
+                    ))}
+                    {skiSchools[d.id].privateMax && <p>最多 {skiSchools[d.id].privateMax} 人共享</p>}
+                  </div>
+                )}
+                <p>兒童：{skiSchools[d.id].kids}</p>
+                <p>教學語言：{skiSchools[d.id].languages?.join('、')}</p>
+                {skiSchools[d.id].notes && <p className="dest-detail-note">{skiSchools[d.id].notes}</p>}
+              </div>
+            )}
+
             <div className="dest-detail-links">
               {d.officialUrl && (
                 <a href={d.officialUrl} target="_blank" rel="noopener noreferrer">
@@ -137,6 +157,11 @@ function DestinationCard({ d, index }) {
               {d.rental?.url && (
                 <a href={d.rental.url} target="_blank" rel="noopener noreferrer">
                   <ShirtIcon size={13} /> 租借價格
+                </a>
+              )}
+              {skiSchools[d.id]?.schoolUrl && (
+                <a href={skiSchools[d.id].schoolUrl} target="_blank" rel="noopener noreferrer">
+                  <GraduationCap size={13} /> 滑雪學校
                 </a>
               )}
             </div>
