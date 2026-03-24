@@ -548,23 +548,123 @@
   font-weight: 500;
 }
 
-.dest-footer {
+.dest-skibadge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(34, 197, 94, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dest-info-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.dest-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.dest-info-item svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dest-expand-btn {
+  width: 100%;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  color: var(--secondary);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+.dest-expand-btn:hover {
+  background: rgba(14, 165, 233, 0.15);
+}
+
+.dest-detail {
   padding-top: 0.75rem;
   border-top: 1px solid var(--glass-border);
 }
 
-.dest-price strong {
-  font-size: 1.2rem;
-  color: var(--text-primary);
+.dest-detail-section {
+  margin-bottom: 0.75rem;
 }
 
-.dest-price span {
-  display: block;
-  font-size: 0.75rem;
+.dest-detail-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.dest-detail-section h4 svg {
+  color: var(--secondary);
+}
+
+.dest-detail-section p {
+  font-size: 0.78rem;
   color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.15rem;
+}
+
+.dest-detail-note {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.dest-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.dest-detail-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  transition: var(--transition);
+}
+
+.dest-detail-links a:hover {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: var(--secondary);
 }
 
 /* ========== Tips ========== */
@@ -675,6 +775,158 @@
 
 .tip-more:hover {
   color: var(--primary);
+}
+
+/* ========== Instructor Section ========== */
+.instructor-section {
+  margin-top: 4rem;
+}
+
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.instructor-card {
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.instructor-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.instructor-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.instructor-flag {
+  font-size: 1.5rem;
+}
+
+.instructor-header h3 {
+  font-size: 1.15rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.instructor-price {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background: rgba(14, 165, 233, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.instructor-pros,
+.instructor-cons {
+  margin-bottom: 0.75rem;
+}
+
+.instructor-pros h4,
+.instructor-cons h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.instructor-pro-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding: 0.15rem 0;
+}
+
+.instructor-pro-item svg {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.instructor-con-item {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding: 0.1rem 0;
+}
+
+.instructor-info {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.instructor-info p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.instructor-info strong {
+  color: var(--text-primary);
+}
+
+.instructor-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+.instructor-tips {
+  padding: 1.5rem;
+}
+
+.instructor-tips h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.instructor-tips ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.5rem;
+}
+
+.instructor-tips li {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.instructor-tips li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .instructor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-tips ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========== Booking ========== */

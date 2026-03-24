@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { Share2, Clock, ArrowRight } from 'lucide-react'
+import { Share2, Clock, ArrowRight, CheckCircle } from 'lucide-react'
 import * as Icons from 'lucide-react'
-import { tips } from '../data/destinations'
+import { tips, instructorGuide } from '../data/destinations'
 
 function TipCard({ tip, index }) {
   const Icon = Icons[tip.icon] || Icons.Snowflake
@@ -13,9 +13,7 @@ function TipCard({ tip, index }) {
       url: window.location.href,
     }
     if (navigator.share) {
-      try {
-        await navigator.share(shareData)
-      } catch {}
+      try { await navigator.share(shareData) } catch {}
     } else {
       await navigator.clipboard.writeText(
         `${shareData.title}\n${shareData.text}\n${shareData.url}`
@@ -56,6 +54,68 @@ function TipCard({ tip, index }) {
   )
 }
 
+function InstructorSection() {
+  const guide = instructorGuide
+  return (
+    <motion.div
+      className="instructor-section"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <div className="section-header">
+        <h2>{guide.title}</h2>
+        <p>{guide.subtitle}</p>
+      </div>
+
+      <div className="instructor-grid">
+        {guide.languages.map((lang) => (
+          <div key={lang.id} className="instructor-card glass">
+            <div className="instructor-header">
+              <span className="instructor-flag">{lang.flag}</span>
+              <h3>{lang.lang}</h3>
+              <span className="instructor-price">{lang.priceRange}</span>
+            </div>
+
+            <div className="instructor-pros">
+              <h4>優點</h4>
+              {lang.pros.map((p) => (
+                <div key={p} className="instructor-pro-item">
+                  <CheckCircle size={13} /> <span>{p}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="instructor-cons">
+              <h4>缺點</h4>
+              {lang.cons.map((c) => (
+                <div key={c} className="instructor-con-item">
+                  <span>・{c}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="instructor-info">
+              <p><strong>適合對象：</strong>{lang.bestFor}</p>
+              <p><strong>預約方式：</strong>{lang.booking}</p>
+              <p className="instructor-note">{lang.notes}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="instructor-tips glass">
+        <h4>💡 請教練的實用建議</h4>
+        <ul>
+          {guide.tips.map((tip, i) => (
+            <li key={i}>{tip}</li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function Tips() {
   return (
     <section id="tips">
@@ -74,6 +134,8 @@ export default function Tips() {
             <TipCard key={tip.id} tip={tip} index={i} />
           ))}
         </div>
+
+        <InstructorSection />
       </div>
     </section>
   )
