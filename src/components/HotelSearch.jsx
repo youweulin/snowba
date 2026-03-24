@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Star, Wifi, Coffee, ExternalLink, Loader2 } from 'lucide-react'
+import { Search, ExternalLink } from 'lucide-react'
 
-// 北海道各城市 Agoda cityId
 const cities = [
   { id: 17021, name: '札幌', nameEn: 'Sapporo' },
   { id: 17958, name: '旭川', nameEn: 'Asahikawa' },
@@ -26,94 +25,14 @@ function getDefaultDates() {
   }
 }
 
-function HotelCard({ hotel }) {
-  return (
-    <motion.a
-      href={hotel.landingURL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hs-hotel glass"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
-      <img
-        src={hotel.imageURL}
-        alt={hotel.hotelName}
-        className="hs-hotel-img"
-        loading="lazy"
-      />
-      <div className="hs-hotel-body">
-        <div className="hs-hotel-header">
-          <h4>{hotel.hotelName}</h4>
-          <div className="hs-hotel-stars">
-            {Array.from({ length: Math.floor(hotel.starRating) }).map((_, i) => (
-              <Star key={i} size={12} fill="#fbbf24" color="#fbbf24" />
-            ))}
-          </div>
-        </div>
-        <div className="hs-hotel-meta">
-          <span className="hs-hotel-score">{hotel.reviewScore?.toFixed(1)}</span>
-          {hotel.freeWifi && <span className="hs-hotel-tag"><Wifi size={11} /> Free WiFi</span>}
-          {hotel.includeBreakfast && <span className="hs-hotel-tag"><Coffee size={11} /> 含早餐</span>}
-        </div>
-        <div className="hs-hotel-price">
-          {hotel.crossedOutRate > hotel.dailyRate && (
-            <span className="hs-hotel-crossed">NT${Math.round(hotel.crossedOutRate).toLocaleString()}</span>
-          )}
-          <span className="hs-hotel-rate">NT${Math.round(hotel.dailyRate).toLocaleString()}</span>
-          <span className="hs-hotel-per">/晚</span>
-          {hotel.discountPercentage > 0 && (
-            <span className="hs-hotel-discount">-{Math.round(hotel.discountPercentage)}%</span>
-          )}
-        </div>
-        <span className="hs-hotel-cta">
-          查看房型 <ExternalLink size={12} />
-        </span>
-      </div>
-    </motion.a>
-  )
-}
-
 export default function HotelSearch() {
   const defaults = getDefaultDates()
   const [cityId, setCityId] = useState(17021)
   const [checkIn, setCheckIn] = useState(defaults.checkIn)
   const [checkOut, setCheckOut] = useState(defaults.checkOut)
   const [adults, setAdults] = useState(2)
-  const [loading, setLoading] = useState(false)
-  const [results, setResults] = useState(null)
-  const [error, setError] = useState(null)
 
-  const handleSearch = async () => {
-    setLoading(true)
-    setError(null)
-    setResults(null)
-
-    try {
-      const res = await fetch('/api/agoda-search', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cityId,
-          checkIn,
-          checkOut,
-          adults,
-        }),
-      })
-
-      const data = await res.json()
-
-      if (!res.ok) {
-        throw new Error(data.error || '查詢失敗')
-      }
-
-      setResults(data.results || [])
-    } catch (err) {
-      setError(err.message || '無法連接伺服器，請稍後再試')
-    } finally {
-      setLoading(false)
-    }
-  }
+  const agodaUrl = `https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=${cityId}&checkin=${checkIn}&checkout=${checkOut}&NumberofAdults=${adults}&Rooms=1&languageId=20&currencyCode=TWD`
 
   return (
     <section id="hotel-search">
@@ -124,11 +43,10 @@ export default function HotelSearch() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2>住宿即時查價</h2>
-          <p>選擇城市和日期，即時比較北海道飯店最低房價</p>
+          <h2>住宿查價</h2>
+          <p>選擇城市和日期，直接比較北海道飯店最低房價</p>
         </motion.div>
 
-        {/* Search Form */}
         <motion.div
           className="hs-form glass"
           initial={{ opacity: 0, y: 20 }}
@@ -160,38 +78,18 @@ export default function HotelSearch() {
                 ))}
               </select>
             </div>
-            <button className="btn btn-primary hs-btn" onClick={handleSearch} disabled={loading}>
-              {loading ? <Loader2 size={18} className="hs-spin" /> : <Search size={18} />}
-              {loading ? '搜尋中...' : '查詢房價'}
-            </button>
+            <a
+              href={agodaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary hs-btn"
+            >
+              <Search size={18} />
+              查詢房價
+              <ExternalLink size={14} />
+            </a>
           </div>
         </motion.div>
-
-        {/* Error */}
-        {error && (
-          <div className="hs-error glass">
-            {error}
-          </div>
-        )}
-
-        {/* Results */}
-        {results && results.length > 0 && (
-          <div className="hs-results">
-            <p className="hs-results-count">找到 {results.length} 間飯店</p>
-            <div className="hs-results-grid">
-              {results.map((hotel) => (
-                <HotelCard key={hotel.hotelId} hotel={hotel} />
-              ))}
-            </div>
-            <p className="hs-powered">房價由 Agoda 提供 · 點擊查看完整房型與最新價格</p>
-          </div>
-        )}
-
-        {results && results.length === 0 && (
-          <div className="hs-empty glass">
-            此日期無可用房間，請嘗試其他日期或城市
-          </div>
-        )}
       </div>
     </section>
   )
