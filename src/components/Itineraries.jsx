@@ -117,22 +117,53 @@ function ItineraryCard({ itin, index }) {
             <li key={i}>{h}</li>
           ))}
         </ul>
-        {itin.accommodation.url && (
-          <a href={itin.accommodation.url} target="_blank" rel="noopener noreferrer" className="itin-accom-link">
-            <ExternalLink size={12} /> 查看飯店
-          </a>
-        )}
+        <div className="itin-accom-links">
+          {itin.accommodation.agodaUrl && (
+            <a href={itin.accommodation.agodaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+              Agoda 查房價
+            </a>
+          )}
+          {itin.accommodation.url && (
+            <a href={itin.accommodation.url} target="_blank" rel="noopener noreferrer" className="itin-accom-link">
+              <ExternalLink size={12} /> 官網
+            </a>
+          )}
+        </div>
         {itin.accommodation.alternatives?.length > 0 && (
           <div className="itin-alts">
             <span className="itin-alts-label">其他選擇：</span>
             {itin.accommodation.alternatives.map((alt, i) => (
-              <span key={i} className="itin-alt-tag">
-                {alt.name}（{alt.price}・{alt.note}）
-              </span>
+              alt.agodaUrl ? (
+                <a key={i} href={alt.agodaUrl} target="_blank" rel="noopener noreferrer" className="itin-alt-tag itin-alt-link">
+                  {alt.name}（{alt.price}・{alt.note}）
+                </a>
+              ) : (
+                <span key={i} className="itin-alt-tag">
+                  {alt.name}（{alt.price}・{alt.note}）
+                </span>
+              )
             ))}
           </div>
         )}
       </div>
+
+      {/* 一鍵預訂連結 */}
+      {itin.bookingLinks && (
+        <div className="itin-booking-links">
+          {itin.bookingLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="itin-booking-btn"
+              style={{ borderColor: link.color, color: link.color }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
 
       <button className="itin-expand" onClick={() => setExpanded(!expanded)}>
         <Calendar size={15} />

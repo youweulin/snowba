@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Affiliate data (contains API keys and hotel data)
+src/assets/japan_hotels.csv
+.env
+.env.local

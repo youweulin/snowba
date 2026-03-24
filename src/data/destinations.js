@@ -1347,14 +1347,21 @@ export const itineraries = [
     accommodation: {
       name: 'OMO7 旭川 by 星野集團',
       url: 'https://hoshinoresorts.com/en/hotels/omo7asahikawa/',
+      agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=3692586',
       price: '每晚約 ¥8,000-15,000/人',
       highlights: ['★ 免費滑雪接駁巴士到 5 座雪場（神居、比布、聖誕老人公園、旭岳、Canmore）', '企鵝＆北極熊主題房', '近旭川站步行 2 分鐘', '提供纜車票代售'],
       alternatives: [
-        { name: 'JR Inn 旭川', price: '¥5,000-7,000/晚', note: '車站直結，CP值高' },
-        { name: 'Dormy Inn 旭川', price: '¥6,000-9,000/晚', note: '免費宵夜拉麵＋天然溫泉' },
-        { name: '旭川藤田觀光飯店', price: '¥4,500-6,000/晚', note: '平價選擇' },
+        { name: 'JR Inn 旭川', price: '¥5,000-7,000/晚', note: '車站直結，CP值高', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=782763' },
+        { name: 'Dormy Inn 旭川', price: '¥6,000-9,000/晚', note: '免費宵夜拉麵＋天然溫泉', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=178235' },
+        { name: '旭川藤田觀光飯店', price: '¥4,500-6,000/晚', note: '平價選擇', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=16983' },
       ],
     },
+    bookingLinks: [
+      { label: '✈️ 機票比價', url: 'https://www.skyscanner.com/transport/flights/tpe/akh/', color: '#3b82f6' },
+      { label: '🎿 神居雪票', url: 'https://www.wamazing.com/snow/resorts/kamui-skilinks', color: '#22c55e' },
+      { label: '👨‍🏫 找中文教練', url: 'https://diy.ski/', color: '#f97316' },
+      { label: '🛡️ 滑雪保險', url: 'https://www.klook.com/en-US/activity/77821?aid=30600', color: '#8b5cf6' },
+    ],
     days: [
       {
         day: 'Day 1',
@@ -1425,15 +1432,24 @@ export const itineraries = [
     accommodation: {
       name: '薄野或札幌站周邊商旅',
       url: null,
+      agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=16997',
       price: '每晚約 ¥6,000-12,000/人',
       highlights: ['白天滑雪、晚上逛街吃海鮮', '地鐵/JR 到各雪場巴士站都方便', '薄野夜生活豐富', '多數飯店有大浴場'],
       alternatives: [
-        { name: 'OMO3 札幌薄野（星野集團）', price: '¥6,000-10,000/晚', note: '滑雪巴士直接從飯店出發' },
-        { name: '札幌東急 REI 飯店', price: '¥7,000-11,000/晚', note: '滑雪巴士停靠站' },
-        { name: 'Dormy Inn PREMIUM 札幌', price: '¥8,000-12,000/晚', note: '天然溫泉＋免費宵夜拉麵' },
-        { name: '定山溪溫泉旅館（1晚）', price: '¥12,000-20,000/晚', note: '一泊二食，距札幌國際滑雪場僅 20 分鐘' },
+        { name: 'OMO3 札幌薄野（星野集團）', price: '¥6,000-10,000/晚', note: '滑雪巴士直接從飯店出發', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=35924992' },
+        { name: '札幌東急 REI 飯店', price: '¥7,000-11,000/晚', note: '滑雪巴士停靠站', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=3212' },
+        { name: 'Dormy Inn PREMIUM 札幌', price: '¥8,000-12,000/晚', note: '天然溫泉＋免費宵夜拉麵', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=161505' },
+        { name: '定山溪溫泉旅館（1晚）', price: '¥12,000-20,000/晚', note: '一泊二食，距札幌國際滑雪場僅 20 分鐘', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=16997&area=174' },
       ],
     },
+    bookingLinks: [
+      { label: '✈️ 機票比價', url: 'https://www.skyscanner.com/transport/flights/tpe/cts/', color: '#3b82f6' },
+      { label: '🎿 手稻一日遊（含教練）', url: 'https://www.kkday.com/en-us/product/157140?cid=14336', color: '#ef4444' },
+      { label: '🎿 盤溪一日遊（含教練）', url: 'https://www.kkday.com/en-us/product/17983?cid=14336', color: '#ef4444' },
+      { label: '🎿 札幌國際一日遊', url: 'https://www.klook.com/en-US/activity/127172?aid=30600', color: '#22c55e' },
+      { label: '👨‍🏫 找中文教練', url: 'https://diy.ski/', color: '#f97316' },
+      { label: '🛡️ 滑雪保險', url: 'https://www.klook.com/en-US/activity/77821?aid=30600', color: '#8b5cf6' },
+    ],
     days: [
       {
         day: 'Day 1',
@@ -1506,13 +1522,19 @@ export const itineraries = [
     accommodation: {
       name: '膠囊旅館或青年旅舍',
       url: null,
+      agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=16997&sort=priceLowToHigh',
       price: '每晚約 ¥3,000-5,000/人',
       highlights: ['札幌站或薄野周邊', '乾淨安全', '交通方便'],
       alternatives: [
-        { name: 'The Stay Sapporo', price: '¥3,500-5,000/晚', note: '設計感青旅' },
-        { name: 'GRIDS 札幌', price: '¥3,000-4,500/晚', note: '膠囊+共用空間' },
+        { name: 'The Stay Sapporo', price: '¥3,500-5,000/晚', note: '設計感青旅', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=5097313' },
+        { name: 'GRIDS 札幌', price: '¥3,000-4,500/晚', note: '膠囊+共用空間', agodaUrl: 'https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&hid=2119569' },
       ],
     },
+    bookingLinks: [
+      { label: '✈️ 廉航促銷', url: 'https://www.skyscanner.com/transport/flights/tpe/cts/', color: '#3b82f6' },
+      { label: '🎿 盤溪一日遊', url: 'https://www.kkday.com/en-us/product/17983?cid=14336', color: '#ef4444' },
+      { label: '🎿 札幌國際套票', url: 'https://www.klook.com/en-US/activity/127172?aid=30600', color: '#22c55e' },
+    ],
     days: [
       {
         day: 'Day 1',

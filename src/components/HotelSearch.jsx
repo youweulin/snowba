@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { Search, ExternalLink } from 'lucide-react'
 
 const cities = [
-  { id: 17021, name: '札幌', nameEn: 'Sapporo' },
-  { id: 17958, name: '旭川', nameEn: 'Asahikawa' },
-  { id: 14690, name: '小樽', nameEn: 'Otaru' },
-  { id: 18041, name: '俱知安（新雪谷）', nameEn: 'Kutchan / Niseko' },
-  { id: 18498, name: '富良野', nameEn: 'Furano' },
-  { id: 15513, name: '函館', nameEn: 'Hakodate' },
-  { id: 17470, name: '登別', nameEn: 'Noboribetsu' },
-  { id: 18107, name: '帶廣', nameEn: 'Obihiro' },
+  { id: 'sapporo', name: '札幌', nameEn: 'Sapporo', agodaCity: 16997 },
+  { id: 'asahikawa', name: '旭川', nameEn: 'Asahikawa', agodaCity: 16983 },
+  { id: 'otaru', name: '小樽', nameEn: 'Otaru', agodaCity: 16993 },
+  { id: 'niseko', name: '新雪谷', nameEn: 'Niseko', agodaCity: 18041 },
+  { id: 'furano', name: '富良野', nameEn: 'Furano', agodaCity: 16986 },
+  { id: 'hakodate', name: '函館', nameEn: 'Hakodate', agodaCity: 16987 },
+  { id: 'noboribetsu', name: '登別', nameEn: 'Noboribetsu', agodaCity: 16994 },
+  { id: 'toya', name: '洞爺湖', nameEn: 'Toya', agodaCity: 17001 },
 ]
 
 function getDefaultDates() {
@@ -27,12 +27,15 @@ function getDefaultDates() {
 
 export default function HotelSearch() {
   const defaults = getDefaultDates()
-  const [cityId, setCityId] = useState(17021)
+  const [selectedCity, setSelectedCity] = useState('sapporo')
   const [checkIn, setCheckIn] = useState(defaults.checkIn)
   const [checkOut, setCheckOut] = useState(defaults.checkOut)
   const [adults, setAdults] = useState(2)
 
-  const agodaUrl = `https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=${cityId}&checkin=${checkIn}&checkout=${checkOut}&NumberofAdults=${adults}&Rooms=1&languageId=20&currencyCode=TWD`
+  const city = cities.find(c => c.id === selectedCity)
+
+  const agodaUrl = `https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1913061&city=${city.agodaCity}&checkin=${checkIn}&checkout=${checkOut}&NumberofAdults=${adults}&Rooms=1&languageId=20&currencyCode=TWD`
+  const bookingUrl = `https://www.booking.com/searchresults.zh-tw.html?aid=7966163&ss=${city.nameEn}&checkin=${checkIn}&checkout=${checkOut}&group_adults=${adults}&no_rooms=1`
 
   return (
     <section id="hotel-search">
@@ -56,7 +59,7 @@ export default function HotelSearch() {
           <div className="hs-form-grid">
             <div className="hs-field">
               <label>城市</label>
-              <select value={cityId} onChange={(e) => setCityId(Number(e.target.value))}>
+              <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                 {cities.map((c) => (
                   <option key={c.id} value={c.id}>{c.name}（{c.nameEn}）</option>
                 ))}
@@ -78,15 +81,18 @@ export default function HotelSearch() {
                 ))}
               </select>
             </div>
-            <a
-              href={agodaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary hs-btn"
-            >
-              <Search size={18} />
-              查詢房價
-              <ExternalLink size={14} />
+          </div>
+
+          <div className="hs-btn-group">
+            <a href={agodaUrl} target="_blank" rel="noopener noreferrer" className="hs-search-btn hs-agoda">
+              <Search size={16} />
+              Agoda 查房價
+              <ExternalLink size={13} />
+            </a>
+            <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="hs-search-btn hs-booking">
+              <Search size={16} />
+              Booking.com 查房價
+              <ExternalLink size={13} />
             </a>
           </div>
         </motion.div>
