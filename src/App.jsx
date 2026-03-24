@@ -15,7 +15,18 @@ import ApresSkiGuide from './components/ApresSkiGuide'
 function App() {
   const [page, setPage] = useState('home')
   const goHome = () => { setPage('home'); window.scrollTo(0, 0) }
+  const goHomeAndScroll = (hash) => {
+    if (page !== 'home') {
+      setPage('home')
+      setTimeout(() => {
+        const el = document.querySelector(hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }
   const nav = {
+    page,
+    goHomeAndScroll,
     onSkiJapanese: () => { setPage('ski-japanese'); window.scrollTo(0, 0) },
     onSafety: () => { setPage('safety'); window.scrollTo(0, 0) },
     onApresSki: () => { setPage('apres-ski'); window.scrollTo(0, 0) },
@@ -59,7 +70,7 @@ function App() {
       <Destinations />
       <Itineraries />
       <Tips {...nav} />
-      <HotelSearch />
+      {/* <HotelSearch /> */}
       <Booking />
       <Footer />
     </>

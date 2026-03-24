@@ -826,6 +826,14 @@ export const entertainmentGuide = [
 // ============================================================
 export const quickTips = {
   title: '滑雪後生存指南：快速小提醒',
+  images: [
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-ramen/public', alt: '北海道拉麵' },
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-sapporo-classic/public', alt: 'SAPPORO CLASSIC' },
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-seicomart/public', alt: 'Seicomart HOT CHEF' },
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-onsen/public', alt: '溫泉泡湯' },
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-beer/public', alt: '北海道地酒' },
+    { url: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/apres-festival/public', alt: '札幌雪祭' },
+  ],
   tips: [
     {
       icon: '🍜',

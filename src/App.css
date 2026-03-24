@@ -702,6 +702,58 @@
   font-style: italic;
 }
 
+.dest-ticket-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.dest-ticket-link:hover {
+  background: rgba(14, 165, 233, 0.08);
+  border-color: var(--secondary);
+}
+
+.dest-ticket-link > svg:first-child {
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.dest-ticket-link > svg:last-child {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.dest-ticket-link strong {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+.dest-ticket-link span {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+}
+
+.dest-transport-link > svg:first-child {
+  color: #22c55e;
+}
+
+.dest-transport-link {
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.dest-transport-link:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: #22c55e;
+}
+
 .dest-detail-links {
   display: flex;
   flex-wrap: wrap;
@@ -1376,6 +1428,29 @@
 .ic-card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 255, 255, 0.25);
+}
+
+.ic-photo-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.ic-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.ic-photo-wrap .ic-flag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 2px 4px;
 }
 
 .ic-avatar-wrap {
@@ -2350,6 +2425,79 @@
   position: absolute;
   left: 0;
   color: var(--secondary);
+}
+
+/* Après-Ski Tips Section */
+.ap-tips-section {
+  margin-top: 2rem;
+}
+
+.ap-tips-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ap-tips-img-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.ap-tips-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.ap-tips-img-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.ap-tips-img-wrap span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.ap-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.ap-tip-item {
+  display: flex;
+  gap: 0.6rem;
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.ap-tip-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ap-tip-item p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ap-tips-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ========== Ski Japanese Page ========== */

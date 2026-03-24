@@ -96,7 +96,7 @@ export const destinations = [
     country: '日本',
     region: '俱知安町',
     mapIndex: 1,
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',
+    image: 'https://www.grand-hirafu.jp/cms/wp-content/uploads/2024/09/Gh_Wb_Ogp_Winter.jpg',
     rating: 4.9,
     tags: ['粉雪聖地', '國際化', '夜滑'],
     description: '新雪谷四大雪場中最大最熱鬧的一座，佔全山約 60% 面積，Hirafu 區餐廳酒吧林立，夜滑到 20:30，正面對望羊蹄山。從初學者緩坡到專家級樹林路線一應俱全。',
@@ -128,7 +128,7 @@ export const destinations = [
     country: '日本',
     region: '留壽都村',
     mapIndex: 2,
-    image: 'https://images.unsplash.com/photo-1610737241336-371badac3b66?w=600&q=80',
+    image: 'https://rusutsu.com/assets/img/common/ogp.jpg',
     rating: 4.9,
     tags: ['三山連峰', '粉雪', '度假村'],
     description: '橫跨西山、東山及伊索拉山三座山峰的超大型度假村，37 條雪道約 800 公頃，以北海道最佳樹林滑雪聞名，人潮比新雪谷少。設施完善含遊樂園、溫泉。連續獲選日本最佳滑雪度假村。',
@@ -160,7 +160,7 @@ export const destinations = [
     country: '日本',
     region: '新雪谷町',
     mapIndex: 3,
-    image: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?w=600&q=80',
+    image: 'https://annupuri.info/common/img/sns.jpg',
     rating: 4.6,
     tags: ['寬闊雪道', '初學者友善', '溫泉'],
     description: '新雪谷四座中最西側，雪道最寬闊舒適，坡度較緩，是最適合家庭和初中級滑雪者的選擇。鄰近昆布溫泉，人潮最少氣氛悠閒。',
@@ -192,7 +192,7 @@ export const destinations = [
     country: '日本',
     region: '札幌市手稻區',
     mapIndex: 4,
-    image: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=600&q=80',
+    image: 'https://sapporo-teine.com/snow/wp-content/themes/teine-snow/images/common2023/gnav-course.jpg',
     rating: 4.5,
     tags: ['交通便利', '奧運場地', '夜景'],
     description: '1972 年札幌冬奧場地，分為 Highland（高地）與 Olympia（奧林匹亞）兩大區域，共 15 條雪道。山頂標高 1,023m 可同時眺望札幌市區與日本海。晚間營業至 20:00。',
@@ -224,7 +224,7 @@ export const destinations = [
     country: '日本',
     region: '新雪谷町',
     mapIndex: 5,
-    image: 'https://images.unsplash.com/photo-1610735524900-31f0e0d2b577?w=600&q=80',
+    image: 'https://www.niseko-village.com/wp-content/uploads/2023/09/home2-scaled.jpg',
     rating: 4.7,
     tags: ['度假村', '粉雪', '希爾頓'],
     description: '以高端度假氛圍聞名，擁有區域最長 2,660m 空中纜車、27 條雪道，天然樹林路線與羊蹄山景色壯觀。山腳下有購物商街、天然溫泉岩池及多間餐廳。',
@@ -256,7 +256,7 @@ export const destinations = [
     country: '日本',
     region: '赤井川村',
     mapIndex: 6,
-    image: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=600&q=80',
+    image: 'https://www.kiroro.co.jp/wp-content/uploads/2024/01/img_kiroro_grand.jpg',
     rating: 4.8,
     tags: ['頂級粉雪', '度假村', '人少'],
     description: '橫跨朝里岳和長峰兩座山，23 條雪道約 120 公頃，山頂平均積雪 5m，年均降雪超 17m，是日本降雪量最豐富的雪場之一。喜來登與翠富士兩間國際品牌酒店進駐。',
@@ -288,7 +288,7 @@ export const destinations = [
     country: '日本',
     region: '札幌市南區',
     mapIndex: 7,
-    image: 'https://images.unsplash.com/photo-1577655197620-704858b270ac?w=600&q=80',
+    image: 'https://www.sapporo-kokusai.jp/images/slide1.jpg',
     rating: 4.6,
     tags: ['粉雪量大', '初中級', '溫泉近'],
     description: '位於朝里岳北斜面，年降雪量超 7m，最大積雪 4m，是札幌周邊雪量最豐富的雪場。7 條雪道，最長滑行 3.6km，地形以寬闊中緩斜面為主。距定山溪溫泉僅 20 分鐘。',
@@ -320,7 +320,7 @@ export const destinations = [
     country: '日本',
     region: '占冠村',
     mapIndex: 8,
-    image: 'https://images.unsplash.com/photo-1734004939813-6a0b9f002726?w=600&q=80',
+    image: 'https://www.snowtomamu.jp/assets/ski/images/home/hero.jpg',
     rating: 4.7,
     tags: ['度假村', '雲海', '親子'],
     description: '北海道最頂級一站式滑雪度假村，29 條雪道，零下 10°C 極寒環境造就超乾燥粉雪。日本首座 Ski-in Ski-out Village。冬季限定：冰之教堂、愛絲冰城、木林之湯露天溫泉。',
@@ -352,7 +352,7 @@ export const destinations = [
     country: '日本',
     region: '札幌市中央區',
     mapIndex: 9,
-    image: 'https://images.unsplash.com/photo-1734538329126-438ea2482445?w=600&q=80',
+    image: 'https://www.bankei.co.jp/wp1512/wp-content/uploads/2025/11/slide_winter02.jpg',
     rating: 4.1,
     tags: ['市區最近', '夜滑', 'Mogul聖地'],
     description: '距札幌市中心僅 20 分鐘，17 條多元雪道，曾多次舉辦 FIS 國際滑雪賽事，是北海道 mogul（饅頭）訓練聖地。營業至 21:00（週六 22:00），北海道夜滑時間最長。三座地鐵站有免費接駁巴士。',
@@ -384,7 +384,7 @@ export const destinations = [
     country: '日本',
     region: '札幌市南區',
     mapIndex: 10,
-    image: 'https://images.unsplash.com/photo-1609766857326-18a248ba3e20?w=600&q=80',
+    image: 'https://sapporo-moiwa.jp/wp/wp-content/uploads/2025/11/ogp.png',
     rating: 4.2,
     tags: ['初學者', '百萬夜景', '禁止單板'],
     description: '札幌市民的後花園雪場，10 條雪道適合初中級，山頂可欣賞札幌百萬夜景。2025-26 賽季重大革新：解禁單板滑雪、全面導入 IC 卡自動閘門。',
@@ -416,7 +416,7 @@ export const destinations = [
     country: '日本',
     region: '日高町',
     mapIndex: 11,
-    image: 'https://images.unsplash.com/photo-1643479069498-cd4bd1783235?w=600&q=80',
+    image: 'https://www.town.hidaka.hokkaido.jp/assets/images/content/content_20241212_095531.jpg',
     rating: 4.0,
     tags: ['秘境', '超值', '初學者'],
     description: '日高地區唯一的正規滑雪場，10 條雪道從平緩寬闊的初學者路線到最大斜度 31° 挑戰賽道。町營運價格親民，設有專用雪橇滑道，適合家庭。',
@@ -448,7 +448,7 @@ export const destinations = [
     country: '日本',
     region: '登別市',
     mapIndex: 12,
-    image: 'https://images.unsplash.com/photo-1732635497608-14e523e2087e?w=600&q=80',
+    image: 'https://sanlaiva.com/banner/school.jpg',
     rating: 4.1,
     tags: ['溫泉', '超值', '初學者'],
     description: '登別溫泉鄉附近的小型在地雪場，7 條雪道（目前5條營運），最大斜度 32°。人潮極少幾乎包場，最大賣點是滑完雪直奔登別溫泉泡湯，纜車票價北海道最親民。',
@@ -480,7 +480,7 @@ export const destinations = [
     country: '日本',
     region: '小樽市',
     mapIndex: 13,
-    image: 'https://images.unsplash.com/photo-1533422902779-aff35862e462?w=600&q=80',
+    image: 'https://asari-ski.com/common/img/sns.png',
     rating: 4.3,
     tags: ['溫泉', '日本海絕景', '高CP值'],
     description: '小樽在地人私房雪場，9 條雪道（上級5、中級3、初級2），最長 3,000m，標高差 520m。纜車上可一望日本海全景，100% 天然雪。結合溫泉街，滑完直接泡湯。',
@@ -512,7 +512,7 @@ export const destinations = [
     country: '日本',
     region: '俱知安町',
     mapIndex: 14,
-    image: 'https://images.unsplash.com/photo-1630436707498-5e4a3e53b1a5?w=600&q=80',
+    image: 'https://cdn.hanazononiseko.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2dwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4aec8f8d86f1132ce750ea2948c3c4ede9e448c1/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdERG9MWm05eWJXRjBPZ2xxY0dWbk9oUnpZVzF3YkdsdVoxOW1ZV04wYjNKSklnbzBPakk2TUFZNkJrVlVPZ3B6ZEhKcGNGUTZEbWx1ZEdWeWJHRmpaVWtpQ1VwUVJVY0dPd2hVT2c5amIyeHZjbk53WVdObFNTSUpjMUpIUWdZN0NGUTZESEYxWVd4cGRIbHBWVG9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQWtBR2FRSkFCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--00af911dca67b1e1e9227acf33d706adb97ce918/zipline.jpg',
     rating: 4.8,
     tags: ['樹林粉雪', '地形公園', 'Park Hyatt'],
     description: '新雪谷最東側，以地形公園和深厚樹林粉雪著稱，擁有北海道最大地形公園含 FIS 認證半管。因北面朝向接收更多降雪。2020 年開幕 Park Hyatt 帶來頂級奢華體驗。',
@@ -544,7 +544,7 @@ export const destinations = [
     country: '日本',
     region: '北廣島市',
     mapIndex: 15,
-    image: 'https://images.unsplash.com/photo-1707579636498-43e5e39edec5?w=600&q=80',
+    image: 'https://www.dynasty-resort.jp/assets/images/kv-catch.png',
     rating: 4.0,
     tags: ['新千歲近', '超值', '夜滑21:00'],
     description: '距新千歲機場僅約 25 分鐘車程，適合旅程首日或末日擠出半天滑雪。5 條雪道以初中級為主，票價札幌圈最親民。搭配三井 Outlet 購物可安排充實一日行程。營業至 21:00。',
@@ -576,7 +576,7 @@ export const destinations = [
     country: '日本',
     region: '札幌市南區',
     mapIndex: 16,
-    image: 'https://images.unsplash.com/photo-1711370635244-6fb9a9500db7?w=600&q=80',
+    image: 'https://www.fujino-yagai-sports.jp/fus/wp-content/themes/fus/img/winter/main3.jpg',
     rating: 4.0,
     tags: ['初學者', '親子', '市營最便宜'],
     description: '札幌市營的家庭型滑雪場（正式名「札幌市藤野野外運動交流設施」），6 條雪道，最長 1,800m。票價是札幌市內最便宜等級，未就學兒童免費，札幌近郊「隱藏版穴場」。',
@@ -608,7 +608,7 @@ export const destinations = [
     country: '日本',
     region: '小樽市',
     mapIndex: 17,
-    image: 'https://images.unsplash.com/photo-1710177384498-02dd1439aedf?w=600&q=80',
+    image: 'https://tenguyama.ckk.chuo-bus.co.jp/wp-content/themes/tenguyama/img/ski/ski-top__map-pc2.jpg',
     rating: 4.2,
     tags: ['三大夜景', '中上級', '市區近'],
     description: '北海道三大夜景觀景地之一，海拔 532m，5 條雪道含最大斜度 40° 未壓雪高難度路線。北面朝向雪質維持良好，山頂可俯瞰小樽市街、港口及日本海全景。',
@@ -640,7 +640,7 @@ export const destinations = [
     country: '日本',
     region: '新得町',
     mapIndex: 18,
-    image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80',
+    image: 'https://sahoro-resort.com/wp-content/uploads/2019/12/ski2022.png',
     rating: 4.5,
     tags: ['度假村', '粉雪', 'Club Med'],
     description: '十勝地區最大雪場，21 條雪道（初級8、中級3、上級10），最長 3,000m，十勝晴天率北海道最高，可在陽光下享受粉雪。降雪後可體驗頂級樹林滑行。Club Med 北海道佐幌全包式度假村進駐。',
@@ -672,7 +672,7 @@ export const destinations = [
     country: '日本',
     region: '富良野市',
     mapIndex: 19,
-    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    image: 'https://s3.ap-northeast-1.amazonaws.com/prod-my.surfsnow/real/55/f7/138917246_h500w500.jpg',
     rating: 4.8,
     tags: ['頂級粉雪', 'FIS世界盃', '小學生免費'],
     description: '曾多次舉辦 FIS 世界盃的國際級雪場，分「富良野區域」與「北之峰區域」共 28 條雪道，最長 4,000m。內陸地理位置造就極乾燥輕盈粉雪，可眺望十勝連峰。★小學生以下纜車券完全免費！',
@@ -704,7 +704,7 @@ export const destinations = [
     country: '日本',
     region: '旭川市',
     mapIndex: 20,
-    image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=600&q=80',
+    image: 'https://www.kamui-skilinks.com/wp/wp-content/uploads/2013/10/IMG_3007.jpg',
     rating: 4.5,
     tags: ['粉雪', '人少免排隊', '高CP值'],
     description: '旭川市營大型雪場，25 條雪道、166 公頃，初級32%・中級36%・上級32% 均衡配置。內陸氣候雪質極為輕柔乾爽，知名度不高因此遊客少幾乎不用排隊。',
@@ -736,7 +736,7 @@ export const destinations = [
     country: '日本',
     region: '比布町',
     mapIndex: 21,
-    image: 'https://images.unsplash.com/photo-1520364895146-c4215b8f9599?w=600&q=80',
+    image: 'https://www.town.pippu.hokkaido.jp/ski/images/top/slider1.webp',
     rating: 4.3,
     tags: ['粉雪', '在地秘境', '夜滑附溫泉券'],
     description: '以大雪山連峰為背景的道北最大級雪場，9 條雪道（上級在左、初級在右，區分明確不易迷路）。極致粉雪與超親民價格，夜間券附贈溫泉入浴券，幾乎看不到外國觀光客。',
@@ -768,7 +768,7 @@ export const destinations = [
     country: '日本',
     region: '旭川市',
     mapIndex: 22,
-    image: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=600&q=80',
+    image: 'https://toriaez-hp.jp/assets/2-1300000049/slide-9gF0jIJ7t5.jpg',
     rating: 4.2,
     tags: ['初學者', '親子', '夜滑21:00'],
     description: '旭川市近郊都市型雪場，6 條雪道，營業至 21:00 是旭川市民夜間滑雪熱門選擇。設有兒童樂園、託兒所、雪上電扶梯等親子設施，交通便利價格低廉。',
@@ -800,7 +800,7 @@ export const destinations = [
     country: '日本',
     region: '七飯町',
     mapIndex: 23,
-    image: 'https://images.unsplash.com/photo-1600448899433-55c5e2ba5e42?w=600&q=80',
+    image: 'https://hakodate-nanae.jp/winter/img/2023/header_snowpark.png',
     rating: 4.3,
     tags: ['駒ヶ岳絕景', '3.3km纜車', '家庭'],
     description: '函館最大雪場，正面對望駒岳雄姿與大沼湖景，搭乘日本最長等級 3,319m 六人座纜車即達山頂，可享最長約 4km 下滑。導入人工造雪機確保季初即有雪況。週五六日有夜間營業。',
@@ -856,6 +856,113 @@ export const destinations = [
     },
   },
 ]
+
+// 雪票 & 交通購買連結（依雪場 ID 索引）
+// 所有 Klook 連結帶 ?aid=30600、KKday 帶 ?cid=14336
+export const ticketLinks = {
+  // ① 新雪谷 比羅夫
+  1: {
+    liftTicket: [
+      { name: 'Klook 新雪谷6小時雪票+巴士套票', url: 'https://www.klook.com/en-US/activity/98450?aid=30600', note: '含札幌來回巴士+6hr 纜車券' },
+      { name: '官網線上購票（5%OFF）', url: 'https://www.grand-hirafu.jp/en/tickets/', note: '提前網購享折扣' },
+    ],
+    transport: [
+      { name: 'Klook 札幌↔新雪谷滑雪巴士', url: 'https://www.klook.com/en-US/activity/17870?aid=30600', note: '札幌出發來回巴士' },
+      { name: 'Klook 新千歲→新雪谷單程巴士', url: 'https://www.klook.com/en-US/activity/16825?aid=30600', note: '機場直達' },
+    ],
+  },
+  // ② 留壽都
+  2: {
+    liftTicket: [
+      { name: 'Klook 留壽都雪票+巴士套票', url: 'https://www.klook.com/en-US/activity/17870?aid=30600', note: '含札幌來回巴士' },
+      { name: '官網線上購票（最多16%OFF）', url: 'https://rusutsu.com/en/winter-lift-tickets/', note: '網購比窗口便宜' },
+    ],
+    transport: [
+      { name: 'Klook 札幌↔留壽都滑雪巴士', url: 'https://www.klook.com/en-US/activity/17870?aid=30600', note: '札幌出發來回' },
+    ],
+  },
+  // ④ 札幌手稻
+  4: {
+    liftTicket: [
+      { name: 'WAmazing Snow 手稻雪票', url: 'https://www.wamazing.com/snow/resorts/sapporo-teine', note: '早鳥最多40%OFF' },
+      { name: '官網25小時計時券', url: 'https://sapporo-teine.com/snow/lang/en/tickets/', note: '¥27,000 可分次使用' },
+    ],
+    transport: [
+      { name: 'JR手稻站轉巴士', url: 'https://sapporo-teine.com/snow/lang/en/access/', note: 'JR 15分+巴士16分，來回¥1,000' },
+    ],
+  },
+  // ⑥ 喜樂樂
+  6: {
+    liftTicket: [
+      { name: 'WAmazing Snow 喜樂樂雪票', url: 'https://www.wamazing.com/snow/resorts/kiroro-resort', note: '早鳥優惠' },
+      { name: '官網線上購票', url: 'https://www.kiroro.co.jp/lift_price/', note: '需 ¥500 IC卡押金' },
+    ],
+    transport: [
+      { name: 'Kiroro 免費接駁巴士', url: 'https://www.kiroro.co.jp/access-winter/', note: '札幌出發約100分，需前日預約' },
+    ],
+  },
+  // ⑦ 札幌國際
+  7: {
+    liftTicket: [
+      { name: 'Klook 札幌國際6hr雪票+巴士', url: 'https://www.klook.com/en-US/activity/120198?aid=30600', note: '★超值！含來回巴士+6hr纜車' },
+      { name: 'Klook 札幌國際雪票單買', url: 'https://www.klook.com/en-US/activity/189564?aid=30600', note: '純雪票' },
+      { name: 'Klook 札幌國際一日遊（含教練）', url: 'https://www.klook.com/en-US/activity/127172?aid=30600', note: '含交通+雪票+教練+裝備' },
+      { name: '官網巴士+雪票套票', url: 'https://www.sapporo-kokusai.jp/tw/price/tourpack.php', note: '¥6,500（巴士來回+1日券）' },
+    ],
+    transport: [
+      { name: '中央巴士直達（需預約）', url: 'https://www.sapporo-kokusai.jp/tw/access/', note: '札幌站出發約90分' },
+    ],
+  },
+  // ⑧ TOMAMU
+  8: {
+    liftTicket: [
+      { name: 'WAmazing Snow TOMAMU雪票', url: 'https://www.wamazing.com/snow/resorts/hoshino-resorts-tomamu', note: '早鳥優惠' },
+      { name: '官網購票', url: 'https://www.snowtomamu.jp/winter/ski/ticket/', note: '道民限定折扣' },
+    ],
+    transport: [
+      { name: 'JR TOMAMU站（免費接駁）', url: 'https://www.snowtomamu.jp/winter/ski/', note: 'JR站下車後免費巴士直達' },
+    ],
+  },
+  // ⑨ 盤溪
+  9: {
+    liftTicket: [
+      { name: 'KKday 盤溪一日遊（含教練）', url: 'https://www.kkday.com/en-us/product/17983?cid=14336', note: '含交通+雪票+中文教練' },
+      { name: '官網購票', url: 'https://www.bankei.co.jp/liftprice/', note: '¥6,300/日' },
+    ],
+    transport: [
+      { name: '免費接駁巴士（3站）', url: 'https://www.bankei.co.jp/access/', note: '円山公園/発寒南/真駒內站出發' },
+    ],
+  },
+  // ⑬ 朝里川溫泉
+  13: {
+    liftTicket: [
+      { name: '官網購票', url: 'https://asari-ski.com/lift_charge/', note: '1日券 ¥5,500，優惠券折扣 ¥4,600' },
+    ],
+    transport: [
+      { name: '小樽市內免費接駁巴士', url: 'https://asari-ski.com/', note: '小樽站出發' },
+    ],
+  },
+  // ⑲ 富良野
+  19: {
+    liftTicket: [
+      { name: 'WAmazing Snow 富良野雪票', url: 'https://www.wamazing.com/snow/resorts/furano-ski-resort', note: '★小學生以下免費！' },
+      { name: '官網購票', url: 'https://www.princehotels.co.jp/ski/furano/winter/lift/', note: '¥8,000/日，早鳥 ¥6,500' },
+    ],
+    transport: [
+      { name: 'ラベンダー號巴士', url: 'https://www.princehotels.co.jp/ski/furano/winter/access/', note: '旭川站直達，每日7班' },
+    ],
+  },
+  // ⑳ 神居
+  20: {
+    liftTicket: [
+      { name: 'WAmazing Snow 神居雪票', url: 'https://www.wamazing.com/snow/resorts/kamui-skilinks', note: '早鳥優惠' },
+      { name: '官網購票', url: 'https://www.kamui-skilinks.com/', note: '¥5,300/日' },
+    ],
+    transport: [
+      { name: '旭川機場直達巴士（需預約）', url: 'https://www.kamui-skilinks.com/accsess/', note: '12/20-3/31 每日運行' },
+    ],
+  },
+}
 
 // 各雪場滑雪學校/課程價格（依雪場 ID 索引）
 export const skiSchools = {

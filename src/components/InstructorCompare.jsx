@@ -8,6 +8,7 @@ const instructors = [
     flag: '🇯🇵',
     avatarBg: 'linear-gradient(135deg, #ef4444, #f97316)',
     avatarEmoji: '⛷️',
+    photo: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/instructor-1/public',
     lang: '日語教學',
     certLabel: 'SAJ / SIA 認證',
     dailyFee: 28000,
@@ -30,6 +31,7 @@ const instructors = [
     flag: '🇬🇧',
     avatarBg: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
     avatarEmoji: '🏂',
+    photo: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/instructor-3/public',
     lang: '英語教學',
     certLabel: 'NZSIA / CSIA / BASI',
     dailyFee: 85000,
@@ -51,6 +53,7 @@ const instructors = [
   {
     id: 'tw',
     title: '台灣人教練',
+    photo: 'https://imagedelivery.net/8vYNanmJriUCfsABJIN-Gw/instructor-2/public',
     flag: '🇹🇼',
     avatarBg: 'linear-gradient(135deg, #22c55e, #14b8a6)',
     avatarEmoji: '🎿',
@@ -60,14 +63,16 @@ const instructors = [
     dailyLabel: '¥80,000',
     halfDayFee: 45000,
     halfDayLabel: '¥45,000',
-    maxStudents: 4,
+    maxStudents: 6,
     perPersonCosts: [
       { n: 1, full: 80000, half: 45000 },
       { n: 2, full: 42500, half: 25000 },
       { n: 3, full: 30000, half: 18300 },
       { n: 4, full: 22500, half: 13750 },
+      { n: 5, full: 19000, half: 12000 },
+      { n: 6, full: 16700, half: 10800 },
     ],
-    note: '每加1人約 +¥5,000',
+    note: '每加1人約 +¥5,000，最多6人',
     tags: ['零語言障礙', '最搶手', '提前3個月預約'],
   },
 ]
@@ -85,13 +90,20 @@ function InstructorCard({ inst, index }) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.15 }}
     >
-      {/* Avatar */}
-      <div className="ic-avatar-wrap">
-        <div className="ic-avatar" style={{ background: inst.avatarBg }}>
-          <span className="ic-avatar-emoji">{inst.avatarEmoji}</span>
+      {/* Photo */}
+      {inst.photo ? (
+        <div className="ic-photo-wrap">
+          <img src={inst.photo} alt={inst.title} className="ic-photo" loading="lazy" />
+          <span className="ic-flag">{inst.flag}</span>
         </div>
-        <span className="ic-flag">{inst.flag}</span>
-      </div>
+      ) : (
+        <div className="ic-avatar-wrap">
+          <div className="ic-avatar" style={{ background: inst.avatarBg }}>
+            <span className="ic-avatar-emoji">{inst.avatarEmoji}</span>
+          </div>
+          <span className="ic-flag">{inst.flag}</span>
+        </div>
+      )}
 
       {/* Header */}
       <h3 className="ic-name">{inst.title}</h3>
@@ -185,7 +197,7 @@ export default function InstructorCompare({ onSkiJapanese }) {
               <span className="ic-summary-icon">🇹🇼</span>
               <div>
                 <strong>中文零障礙</strong>
-                <p>台灣教練 4 人分攤 → 每人 ¥22,500/全天</p>
+                <p>台灣教練 6 人分攤 → 每人 ¥16,700/全天</p>
               </div>
             </div>
             <div className="ic-summary-item">

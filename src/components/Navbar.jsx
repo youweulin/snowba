@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Snowflake, Menu, X, ChevronDown } from 'lucide-react'
 
-export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
+export default function Navbar({ page, goHomeAndScroll, onSkiJapanese, onSafety, onApresSki }) {
   const [open, setOpen] = useState(false)
   const [guideOpen, setGuideOpen] = useState(false)
   const closeTimer = { current: null }
@@ -29,14 +29,24 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
   return (
     <nav className="navbar glass">
       <div className="container nav-inner">
-        <a href="#" className="nav-logo" onClick={() => window.location.reload()}>
+        <a href="#" className="nav-logo" onClick={(e) => { e.preventDefault(); if (page !== 'home') { goHomeAndScroll('#'); } else { window.scrollTo({ top: 0, behavior: 'smooth' }); } }}>
           <Snowflake size={24} />
           <span>Snowba 滑雪吧</span>
         </a>
 
         <div className="nav-links-desktop">
           {mainLinks.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link">
+            <a
+              key={l.href}
+              href={l.href}
+              className="nav-link"
+              onClick={(e) => {
+                if (page !== 'home') {
+                  e.preventDefault()
+                  goHomeAndScroll(l.href)
+                }
+              }}
+            >
               {l.label}
             </a>
           ))}
@@ -68,7 +78,9 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
             )}
           </div>
 
-          <a href="#booking" className="btn btn-primary btn-sm">
+          <a href="#booking" className="btn btn-primary btn-sm" onClick={(e) => {
+            if (page !== 'home') { e.preventDefault(); goHomeAndScroll('#booking') }
+          }}>
             立即預訂
           </a>
         </div>
@@ -92,7 +104,10 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
             transition={{ duration: 0.3 }}
           >
             {mainLinks.map((l) => (
-              <a key={l.href} href={l.href} className="nav-link" onClick={() => setOpen(false)}>
+              <a key={l.href} href={l.href} className="nav-link" onClick={(e) => {
+                setOpen(false)
+                if (page !== 'home') { e.preventDefault(); goHomeAndScroll(l.href) }
+              }}>
                 {l.label}
               </a>
             ))}
@@ -106,7 +121,10 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
                 {g.label}
               </button>
             ))}
-            <a href="#booking" className="btn btn-primary" onClick={() => setOpen(false)}>
+            <a href="#booking" className="btn btn-primary" onClick={(e) => {
+              setOpen(false)
+              if (page !== 'home') { e.preventDefault(); goHomeAndScroll('#booking') }
+            }}>
               立即預訂
             </a>
           </motion.div>

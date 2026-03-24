@@ -123,17 +123,33 @@ export default function ApresSkiGuide({ onBack }) {
         {/* Quick Tips */}
         {quickTips?.tips && (
           <motion.div
-            className="sg-tips glass"
+            className="ap-tips-section"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h4>💡 {quickTips.title || '實用小提醒'}</h4>
-            <ul>
+            <h3 className="gs-title">{quickTips.title}</h3>
+
+            {/* 圖片牆 */}
+            {quickTips.images && (
+              <div className="ap-tips-images">
+                {quickTips.images.map((img, i) => (
+                  <div key={i} className="ap-tips-img-wrap">
+                    <img src={img.url} alt={img.alt} loading="lazy" />
+                    <span>{img.alt}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="ap-tips-grid">
               {quickTips.tips.map((tip, i) => (
-                <li key={i}>{typeof tip === 'string' ? tip : tip.tip || tip.title}</li>
+                <div key={i} className="ap-tip-item glass">
+                  <span className="ap-tip-icon">{tip.icon}</span>
+                  <p>{tip.tip}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         )}
       </div>

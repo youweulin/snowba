@@ -4,7 +4,7 @@ import {
   MapPin, Star, Share2, Mountain, Navigation, Bus, BedDouble, Sparkles,
   ExternalLink, Snowflake, Ticket, ShirtIcon, Globe, Calendar, GraduationCap,
 } from 'lucide-react'
-import { destinations, areas, skiSchools } from '../data/destinations'
+import { destinations, areas, skiSchools, ticketLinks } from '../data/destinations'
 
 function DestinationCard({ d, index }) {
   const [expanded, setExpanded] = useState(false)
@@ -123,6 +123,32 @@ function DestinationCard({ d, index }) {
                 <p>{d.snowfall}</p>
               </div>
             )}
+            {ticketLinks[d.id] && (
+              <div className="dest-detail-section">
+                <h4><Ticket size={14} /> 雪票 & 交通購買</h4>
+                {ticketLinks[d.id].liftTicket?.map((t, i) => (
+                  <a key={i} href={t.url} target="_blank" rel="noopener noreferrer" className="dest-ticket-link">
+                    <Ticket size={13} />
+                    <div>
+                      <strong>{t.name}</strong>
+                      <span>{t.note}</span>
+                    </div>
+                    <ExternalLink size={12} />
+                  </a>
+                ))}
+                {ticketLinks[d.id].transport?.map((t, i) => (
+                  <a key={i} href={t.url} target="_blank" rel="noopener noreferrer" className="dest-ticket-link dest-transport-link">
+                    <Bus size={13} />
+                    <div>
+                      <strong>{t.name}</strong>
+                      <span>{t.note}</span>
+                    </div>
+                    <ExternalLink size={12} />
+                  </a>
+                ))}
+              </div>
+            )}
+
             {skiSchools[d.id] && (
               <div className="dest-detail-section">
                 <h4><GraduationCap size={14} /> 滑雪學校</h4>
