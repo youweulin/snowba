@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { MapPin, Star, Share2 } from 'lucide-react'
-import { destinations } from '../data/destinations'
+import { MapPin, Star, Share2, Mountain, Navigation, Bus, BedDouble, Sparkles } from 'lucide-react'
+import { destinations, areas } from '../data/destinations'
 
 function DestinationCard({ d, index }) {
   const shareData = {
@@ -28,7 +28,7 @@ function DestinationCard({ d, index }) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.08 }}
     >
       <div className="dest-img-wrap">
         <img src={d.image} alt={d.name} loading="lazy" />
@@ -52,6 +52,10 @@ function DestinationCard({ d, index }) {
           </div>
         </div>
         <p className="dest-desc">{d.description}</p>
+        <div className="dest-meta">
+          <span><Mountain size={13} /> {d.elevation}</span>
+          <span><Navigation size={13} /> {d.courses} 條雪道</span>
+        </div>
         <div className="dest-tags">
           {d.tags.map((t) => (
             <span key={t} className="tag">
@@ -73,6 +77,51 @@ function DestinationCard({ d, index }) {
   )
 }
 
+function AreaIntro({ area }) {
+  return (
+    <motion.div
+      className="area-intro glass"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <p className="area-overview">{area.description}</p>
+
+      <div className="area-info-grid">
+        <div className="area-info-item">
+          <div className="area-info-icon">
+            <Bus size={18} />
+          </div>
+          <div>
+            <h4>交通規劃</h4>
+            <p>{area.transport}</p>
+          </div>
+        </div>
+
+        <div className="area-info-item">
+          <div className="area-info-icon">
+            <BedDouble size={18} />
+          </div>
+          <div>
+            <h4>住宿建議</h4>
+            <p>{area.accommodation}</p>
+          </div>
+        </div>
+      </div>
+
+      {area.highlights && area.highlights.length > 0 && (
+        <div className="area-highlights">
+          <Sparkles size={14} />
+          <span className="area-highlights-label">周邊推薦：</span>
+          {area.highlights.map((h) => (
+            <span key={h} className="area-highlight-tag">{h}</span>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  )
+}
+
 export default function Destinations() {
   return (
     <section id="destinations">
@@ -83,14 +132,38 @@ export default function Destinations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2>熱門經濟雪場</h2>
-          <p>嚴選亞洲及全球高 CP 值滑雪目的地</p>
+          <h2>北海道滑雪場總覽</h2>
+          <p>從旭川到函館，精選北海道六大區域滑雪場</p>
         </motion.div>
-        <div className="dest-grid">
-          {destinations.map((d, i) => (
-            <DestinationCard key={d.id} d={d} index={i} />
-          ))}
-        </div>
+
+        {areas.map((area) => {
+          const areaResorts = destinations.filter((d) => d.area === area.id)
+          return (
+            <div key={area.id} className="area-section">
+              <motion.div
+                className="area-header"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="area-title">
+                  <MapPin size={20} />
+                  {area.name}
+                  <span className="area-name-en">{area.nameEn}</span>
+                  <span className="area-resort-count">{area.resortCount} 座雪場</span>
+                </h3>
+              </motion.div>
+
+              <AreaIntro area={area} />
+
+              <div className="dest-grid">
+                {areaResorts.map((d, i) => (
+                  <DestinationCard key={d.id} d={d} index={i} />
+                ))}
+              </div>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import HokkaidoMap from './components/HokkaidoMap'
 import Destinations from './components/Destinations'
 import Tips from './components/Tips'
 import Booking from './components/Booking'
@@ -10,6 +11,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <HokkaidoMap />
       <Destinations />
       <Tips />
       <Booking />
