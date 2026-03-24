@@ -9,6 +9,7 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
 
   const mainLinks = [
     { label: '熱門雪場', href: '#destinations' },
+    { label: '找教練', href: '#instructor-compare' },
     { label: '省錢攻略', href: '#tips' },
     { label: '訂房訂行程', href: '#booking' },
   ]
@@ -16,7 +17,7 @@ export default function Navbar({ onSkiJapanese, onSafety, onApresSki }) {
   const guideLinks = [
     { label: '🛡️ 安全滑雪指南', action: onSafety },
     { label: '🍺 滑雪生活指南', action: onApresSki },
-    { label: '📚 滑雪日語教室', action: onSkiJapanese },
+    { label: '📚 滑雪學習資源', action: onSkiJapanese },
   ]
 
   const handleGuideClick = (action) => {

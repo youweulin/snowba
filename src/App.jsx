@@ -5,6 +5,7 @@ import HokkaidoMap from './components/HokkaidoMap'
 import Destinations from './components/Destinations'
 import Itineraries from './components/Itineraries'
 import Tips from './components/Tips'
+import HotelSearch from './components/HotelSearch'
 import Booking from './components/Booking'
 import Footer from './components/Footer'
 import SkiJapanese from './components/SkiJapanese'
@@ -58,6 +59,7 @@ function App() {
       <Destinations />
       <Itineraries />
       <Tips {...nav} />
+      <HotelSearch />
       <Booking />
       <Footer />
     </>

@@ -237,8 +237,8 @@ export default function Tips({ onSkiJapanese, onSafety, onApresSki }) {
             {onSkiJapanese && (
               <button className="guide-link-card glass" onClick={onSkiJapanese}>
                 <span className="guide-link-emoji">📚</span>
-                <h3>滑雪日語教室</h3>
-                <p>60+ 常用滑雪日文，學一年就能跟日文教練溝通</p>
+                <h3>滑雪學習資源</h3>
+                <p>滑雪日語教室 + 教學影片 + 實用學習連結</p>
               </button>
             )}
           </div>

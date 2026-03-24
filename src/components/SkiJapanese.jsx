@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Volume2, ChevronDown, ChevronUp } from 'lucide-react'
+import { ArrowLeft, Volume2, ChevronDown, ChevronUp, PlayCircle, FileText, ExternalLink } from 'lucide-react'
+import { learningResources } from '../data/destinations'
 
 const categories = [
   {
@@ -164,8 +165,8 @@ export default function SkiJapanese({ onBack }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2>滑雪日語教室</h2>
-          <p>學會這些，就能跟日文教練溝通 — 一年省下數萬元教練費！</p>
+          <h2>滑雪學習資源</h2>
+          <p>日語教室 + 教學影片 — 學會這些省下數萬元教練費！</p>
         </motion.div>
 
         {/* 學習建議 */}
@@ -205,6 +206,93 @@ export default function SkiJapanese({ onBack }) {
               {openCat === cat.id && <WordTable words={cat.words} />}
             </motion.div>
           ))}
+        </div>
+
+        {/* 站長故事 */}
+        {learningResources.filter(c => c.featured).map((cat) => (
+          <motion.div
+            key={cat.id}
+            className="sj-story glass"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {cat.items.map((item, i) => (
+              <div key={i}>
+                <h3 className="sj-story-title">{item.title}</h3>
+                <p className="sj-story-desc">{item.description}</p>
+
+                {/* Timeline */}
+                <div className="sj-timeline">
+                  <span className="sj-timeline-label">2018 滑雪天數：25 天</span>
+                  {item.fullStory.timeline.map((t, j) => (
+                    <div key={j} className="sj-timeline-item">
+                      <span className="sj-timeline-date">{t.date}</span>
+                      <span className="sj-timeline-event">{t.event}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Story */}
+                <div className="sj-story-body">
+                  {item.fullStory.story.split('\n\n').map((p, j) => (
+                    <p key={j}>{p}</p>
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <blockquote className="sj-quote">
+                  {item.fullStory.quote}
+                </blockquote>
+
+                {/* Thanks */}
+                {item.fullStory.thanks && (
+                  <p className="sj-story-thanks">{item.fullStory.thanks}</p>
+                )}
+
+                {/* Advice */}
+                <div className="sj-advice">
+                  <strong>給想考教練的你：</strong>
+                  <p>{item.fullStory.advice}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        ))}
+
+        {/* 學習資源 */}
+        <div className="sj-resources">
+          <h3 className="gs-title">學習資源推薦</h3>
+          <p className="gs-subtitle">影片、文章、實用連結，幫你快速上手</p>
+          <div className="sj-res-grid">
+            {learningResources.filter(c => !c.featured).map((cat) => (
+              <div key={cat.id} className="sj-res-cat glass">
+                <h4>{cat.category}</h4>
+                {cat.items.map((item, i) => (
+                  item.url ? (
+                    <a key={i} href={item.url} target="_blank" rel="noopener noreferrer" className="sj-res-link">
+                      {item.type === 'video' ? <PlayCircle size={16} /> : <FileText size={16} />}
+                      <div>
+                        <strong>{item.title}</strong>
+                        <span>{item.source} · {item.lang}</span>
+                        <p>{item.description}</p>
+                      </div>
+                      <ExternalLink size={14} className="sj-res-ext" />
+                    </a>
+                  ) : (
+                    <div key={i} className="sj-res-link">
+                      <FileText size={16} />
+                      <div>
+                        <strong>{item.title}</strong>
+                        <span>{item.source} · {item.lang}</span>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 省錢提醒 */}
