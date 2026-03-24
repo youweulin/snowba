@@ -1,8 +1,87 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, Wallet, BedDouble, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
-import { itineraries } from '../data/destinations'
+import { MapPin, Calendar, Wallet, BedDouble, ChevronDown, ChevronUp, ExternalLink, CheckCircle, XCircle } from 'lucide-react'
+import { itineraries, tripComparison } from '../data/destinations'
 
+/* ========== Trip Comparison ========== */
+function TripComparisonSection() {
+  const tc = tripComparison
+  return (
+    <div className="tc-section">
+      <div className="section-header">
+        <h2>{tc.title}</h2>
+        <p>{tc.subtitle}</p>
+      </div>
+
+      <div className="tc-season-note glass">{tc.seasonNote}</div>
+
+      <div className="tc-seasons">
+        <div className="tc-cheap">
+          <h4>便宜時段</h4>
+          {tc.cheapSeasons.map((s) => (
+            <div key={s.period} className="tc-season-tag">
+              <span className="tc-season-badge" style={{ background: s.color }}>{s.label}</span>
+              <div>
+                <strong>{s.period}</strong>
+                <span>{s.note}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="tc-expensive">
+          <h4>避開時段（最貴最擠）</h4>
+          {tc.expensiveSeasons.map((s) => (
+            <div key={s.period} className="tc-season-tag tc-season-warn">
+              <strong>{s.period}</strong>
+              <span>{s.note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="tc-grid">
+        {tc.options.map((opt) => (
+          <div key={opt.type} className="tc-card glass">
+            <div className="tc-card-header" style={{ borderColor: opt.color }}>
+              <span className="tc-emoji">{opt.emoji}</span>
+              <h3>{opt.type}</h3>
+              <div className="tc-total" style={{ color: opt.color }}>{opt.total}</div>
+            </div>
+
+            <div className="tc-items">
+              {opt.items.map((item) => (
+                <div key={item.label} className="tc-item">
+                  <span className="tc-item-label">{item.label}</span>
+                  <span className="tc-item-cost">{item.cost}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="tc-proscons">
+              {opt.pros.map((p) => (
+                <div key={p} className="tc-pro"><CheckCircle size={12} /> {p}</div>
+              ))}
+              {opt.cons.map((c) => (
+                <div key={c} className="tc-con"><XCircle size={12} /> {c}</div>
+              ))}
+            </div>
+
+            <div className="tc-platforms">
+              <h4>推薦平台</h4>
+              {opt.platforms.map((p) => (
+                <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="tc-platform-link">
+                  <ExternalLink size={11} /> {p.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* ========== Itinerary Card ========== */
 function ItineraryCard({ itin, index }) {
   const [expanded, setExpanded] = useState(false)
 
@@ -14,7 +93,6 @@ function ItineraryCard({ itin, index }) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.15 }}
     >
-      {/* Header */}
       <div className="itin-header">
         <div>
           <span className="itin-badge" style={{ background: itin.badgeColor }}>{itin.badge}</span>
@@ -26,11 +104,11 @@ function ItineraryCard({ itin, index }) {
           <div>
             <strong>{itin.budget.total}</strong>
             <span>{itin.budget.breakdown}</span>
+            {itin.budget.note && <span className="itin-budget-warn">{itin.budget.note}</span>}
           </div>
         </div>
       </div>
 
-      {/* Accommodation */}
       <div className="itin-accom">
         <h4><BedDouble size={15} /> 推薦住宿：{itin.accommodation.name}</h4>
         <span className="itin-accom-price">{itin.accommodation.price}</span>
@@ -56,7 +134,6 @@ function ItineraryCard({ itin, index }) {
         )}
       </div>
 
-      {/* Day by Day */}
       <button className="itin-expand" onClick={() => setExpanded(!expanded)}>
         <Calendar size={15} />
         {expanded ? '收起每日行程' : '查看每日行程'}
@@ -95,7 +172,7 @@ export default function Itineraries() {
           viewport={{ once: true }}
         >
           <h2>行程規劃範例</h2>
-          <p>旭川 & 札幌出發，從極省到豪華，幫你安排好每一天</p>
+          <p>旭川 & 札幌出發，含住宿推薦與每日行程</p>
         </motion.div>
 
         <div className="itin-grid">
@@ -103,6 +180,8 @@ export default function Itineraries() {
             <ItineraryCard key={itin.id} itin={itin} index={i} />
           ))}
         </div>
+
+        <TripComparisonSection />
       </div>
     </section>
   )

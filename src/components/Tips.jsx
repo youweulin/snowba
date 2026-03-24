@@ -193,7 +193,7 @@ function InstructorSection() {
   )
 }
 
-export default function Tips() {
+export default function Tips({ onSkiJapanese, onSafety, onApresSki }) {
   return (
     <section id="tips">
       <div className="container">
@@ -212,7 +212,39 @@ export default function Tips() {
           ))}
         </div>
 
-        <InstructorCompare />
+        {/* 更多指南入口 */}
+        <motion.div
+          className="guide-links"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="guide-links-grid">
+            {onSafety && (
+              <button className="guide-link-card glass" onClick={onSafety}>
+                <span className="guide-link-emoji">🛡️</span>
+                <h3>安全滑雪指南</h3>
+                <p>安全守則、身體恢復伸展、溫泉推薦、滑雪保險</p>
+              </button>
+            )}
+            {onApresSki && (
+              <button className="guide-link-card glass" onClick={onApresSki}>
+                <span className="guide-link-emoji">🍺</span>
+                <h3>滑雪生活指南</h3>
+                <p>北海道美食、地酒、Après-ski 娛樂、雪祭活動</p>
+              </button>
+            )}
+            {onSkiJapanese && (
+              <button className="guide-link-card glass" onClick={onSkiJapanese}>
+                <span className="guide-link-emoji">📚</span>
+                <h3>滑雪日語教室</h3>
+                <p>60+ 常用滑雪日文，學一年就能跟日文教練溝通</p>
+              </button>
+            )}
+          </div>
+        </motion.div>
+
+        <InstructorCompare onSkiJapanese={onSkiJapanese} />
         <InstructorSection />
       </div>
     </section>

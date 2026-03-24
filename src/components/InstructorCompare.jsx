@@ -139,7 +139,7 @@ function InstructorCard({ inst, index }) {
   )
 }
 
-export default function InstructorCompare() {
+export default function InstructorCompare({ onSkiJapanese }) {
   return (
     <section id="instructor-compare">
       <div className="container">
@@ -193,6 +193,18 @@ export default function InstructorCompare() {
               <div>
                 <strong>重要提醒</strong>
                 <p>以上僅為教練費，纜車票、裝備租借、保險皆需另計！</p>
+              </div>
+            </div>
+            <div className="ic-summary-item">
+              <span className="ic-summary-icon">📚</span>
+              <div>
+                <strong>終極省錢密技</strong>
+                <p>滑雪用的日文其實不難，學一年就夠用了！補習班約 NT$18,000-34,000/年，而中文 vs 日文教練一天價差 ¥50,000，請三天日文教練省下的錢就把一整年日文學費賺回來了，還多會一個語言！</p>
+                {onSkiJapanese && (
+                  <button className="btn btn-primary btn-sm" style={{ marginTop: '0.5rem' }} onClick={onSkiJapanese}>
+                    📚 滑雪日語教室 →
+                  </button>
+                )}
               </div>
             </div>
           </div>

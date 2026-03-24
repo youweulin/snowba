@@ -51,6 +51,69 @@
   color: var(--text-primary);
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  padding: 0.5rem;
+  padding-top: 0.75rem;
+  margin-top: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--text-primary);
+}
+
+.nav-mobile-divider {
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.nav-mobile-guide {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -1065,6 +1128,191 @@
   color: var(--secondary);
 }
 
+.itin-budget-warn {
+  display: block;
+  font-size: 0.7rem;
+  color: #f97316;
+  margin-top: 0.2rem;
+}
+
+/* ========== Trip Comparison ========== */
+.tc-section {
+  margin-top: 4rem;
+}
+
+.tc-season-note {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.tc-seasons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tc-seasons h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.tc-season-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.tc-season-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+  flex-shrink: 0;
+}
+
+.tc-season-tag strong {
+  color: var(--text-primary);
+  margin-right: 0.3rem;
+}
+
+.tc-season-tag span {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.tc-season-warn strong {
+  color: #ef4444;
+}
+
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tc-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.tc-card-header {
+  padding: 1.25rem;
+  text-align: center;
+  border-bottom: 3px solid;
+}
+
+.tc-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.tc-card-header h3 {
+  font-size: 1.1rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.tc-total {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.tc-items {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.tc-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tc-item:last-child {
+  border-bottom: none;
+}
+
+.tc-item-label {
+  color: var(--text-secondary);
+}
+
+.tc-item-cost {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: right;
+  font-size: 0.72rem;
+}
+
+.tc-proscons {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.tc-pro, .tc-con {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  padding: 0.15rem 0;
+}
+
+.tc-pro svg { color: #22c55e; flex-shrink: 0; }
+.tc-pro { color: var(--text-secondary); }
+.tc-con svg { color: #ef4444; flex-shrink: 0; }
+.tc-con { color: var(--text-secondary); }
+
+.tc-platforms {
+  padding: 0.75rem 1.25rem 1.25rem;
+}
+
+.tc-platforms h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.tc-platform-link {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.tc-platform-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .tc-grid {
+    grid-template-columns: 1fr;
+  }
+  .tc-seasons {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========== Instructor Compare ========== */
 .ic-grid {
   display: grid;
@@ -1625,6 +1873,657 @@
   font-size: 0.78rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* ========== Guide Links ========== */
+.guide-links {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.guide-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.guide-link-card {
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.guide-link-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.guide-link-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.guide-link-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.guide-link-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .guide-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Safety Guide Page ========== */
+.sg-page, .ap-page {
+  padding: 6rem 0 4rem;
+  min-height: 100vh;
+}
+
+.sg-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.sg-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sg-tab:hover {
+  border-color: var(--secondary);
+  color: var(--text-primary);
+}
+
+.sg-tab-active {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.sg-content-header {
+  margin-bottom: 1.5rem;
+}
+
+.sg-content-header h2 {
+  font-size: 1.5rem;
+}
+
+.sg-content-header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.sg-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.sg-block {
+  overflow: hidden;
+}
+
+.sg-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.sg-block-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sg-block-header h3 {
+  font-size: 1rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.sg-block-header p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.sg-block-header svg {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.sg-block-body {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.sg-item {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sg-item:last-child {
+  border-bottom: none;
+}
+
+.sg-item-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--secondary);
+  background: rgba(14, 165, 233, 0.15);
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.sg-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.sg-item p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sg-prevention { color: #22c55e !important; }
+.sg-cause { color: #f97316 !important; }
+.sg-relief { color: #3b82f6 !important; }
+.sg-highlight { color: var(--secondary) !important; font-weight: 600; }
+.sg-price { color: var(--secondary) !important; font-weight: 600; }
+
+.sg-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--secondary);
+  margin-left: 0.3rem;
+}
+
+.sg-priority {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  margin-left: 0.3rem;
+  font-weight: 700;
+}
+
+.sg-priority-必要 { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.sg-priority-重要 { background: rgba(249, 115, 22, 0.2); color: #f97316; }
+.sg-priority-建議 { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.sg-priority-high { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.sg-priority-medium { background: rgba(249, 115, 22, 0.2); color: #f97316; }
+.sg-priority-low { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+
+.sg-features {
+  list-style: none;
+  margin: 0.3rem 0 0;
+}
+
+.sg-features li {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.1rem 0;
+  padding-left: 0.8rem;
+  position: relative;
+}
+
+.sg-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.sg-onsen-list {
+  margin-top: 0.5rem;
+}
+
+.sg-onsen-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sg-onsen-item strong {
+  font-size: 0.82rem;
+}
+
+.sg-onsen-type, .sg-onsen-price {
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  color: var(--secondary);
+}
+
+.sg-tips {
+  padding: 1.5rem;
+}
+
+.sg-tips h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.sg-tips ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.4rem;
+}
+
+.sg-tips li {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sg-tips li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* ========== Après-Ski Guide ========== */
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ap-card {
+  overflow: hidden;
+}
+
+.ap-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.ap-card-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ap-card-emoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ap-card-header h3 {
+  font-size: 1rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.ap-card-header p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.ap-card-header svg {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.ap-card-body {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.ap-rec {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.ap-rec:last-child {
+  border-bottom: none;
+}
+
+.ap-rec-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.ap-rec-header strong {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.ap-rec-type {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--secondary);
+}
+
+.ap-rec-price {
+  font-size: 0.7rem;
+  color: #22c55e;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.ap-rec p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ap-rec-pick {
+  color: var(--secondary) !important;
+  font-weight: 600;
+}
+
+.ap-rec-tip {
+  font-style: italic;
+  font-size: 0.75rem !important;
+}
+
+.ap-rec-date, .ap-rec-loc {
+  font-size: 0.72rem !important;
+  color: var(--text-secondary) !important;
+}
+
+.ap-rec-tips {
+  list-style: none;
+  margin: 0.3rem 0 0;
+}
+
+.ap-rec-tips li {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding-left: 0.8rem;
+  position: relative;
+}
+
+.ap-rec-tips li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* ========== Ski Japanese Page ========== */
+.sj-page {
+  padding: 6rem 0 4rem;
+  min-height: 100vh;
+}
+
+.sj-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.sj-back:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.sj-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.sj-tip {
+  padding: 1.25rem;
+}
+
+.sj-tip h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.sj-tip p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.sj-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.sj-cat {
+  overflow: hidden;
+}
+
+.sj-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.sj-cat-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sj-cat-emoji {
+  font-size: 1.3rem;
+}
+
+.sj-cat-header h3 {
+  flex: 1;
+  font-size: 1rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.sj-cat-count {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  background: rgba(14, 165, 233, 0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.sj-cat-header svg {
+  color: var(--text-secondary);
+}
+
+.sj-table {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.sj-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr 1.5fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.sj-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr 1.5fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.8rem;
+}
+
+.sj-jp {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sj-roma {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.sj-zh {
+  color: var(--text-primary);
+}
+
+.sj-scene {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+}
+
+.sj-savings {
+  padding: 2rem;
+  text-align: center;
+}
+
+.sj-savings h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+.sj-savings-math {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.sj-savings-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sj-savings-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.sj-savings-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.sj-savings-value.red {
+  color: #ef4444;
+}
+
+.sj-savings-vs {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.sj-savings-result {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .sj-table-header,
+  .sj-table-row {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+  .sj-table-header span:nth-child(4),
+  .sj-table-row span:nth-child(4) {
+    display: none;
+  }
 }
 
 /* ========== Booking ========== */

@@ -1245,6 +1245,92 @@ export const tips = [
   },
 ]
 
+// 跟團 vs 平台 vs 自助 費用比較
+export const tripComparison = {
+  title: '跟團 vs 半自助 vs 全自助 費用比較',
+  subtitle: '5天4夜北海道滑雪，三種方式的真實花費',
+  seasonNote: '⚠️ 以下價格為淡季（1月中～2月初）參考。旺季（12/25-1/5 春節）加價 30-50%',
+  cheapSeasons: [
+    { period: '1月中～2月初', label: '★ 最推薦', note: '日本新年後，粉雪巔峰+人少+便宜', color: '#22c55e' },
+    { period: '3月中～4月', label: '春雪折扣', note: '票價住宿降價，天氣好但雪質變重', color: '#3b82f6' },
+    { period: '12月初', label: '開季特價', note: '雪道少但票價最低，適合不挑雪況者', color: '#eab308' },
+  ],
+  expensiveSeasons: [
+    { period: '12/25～1/5', note: '日本新年＋跨年，最貴最擠' },
+    { period: '台灣春節', note: '機票翻倍，住宿搶光' },
+    { period: '2月中旬連假', note: '日本建國記念日前後' },
+  ],
+  options: [
+    {
+      type: '跟團',
+      emoji: '🚌',
+      total: 'NT$45,000 ～ 67,000',
+      color: '#ef4444',
+      items: [
+        { label: '機票', cost: '含在團費中' },
+        { label: '住宿', cost: '含在團費中（通常3-4星）' },
+        { label: '交通', cost: '含在團費中' },
+        { label: '雪票', cost: '含1-2天（部分團）' },
+        { label: '教練', cost: '部分含中文團體課' },
+        { label: '餐食', cost: '含大部分正餐' },
+      ],
+      pros: ['零煩惱全包', '有中文領隊', '適合第一次'],
+      cons: ['價格最高', '行程固定不自由', '雪場只去1-2座', '滑雪時間被壓縮'],
+      platforms: [
+        { name: '雄獅旅遊', url: 'https://event.liontravel.com/zh-tw/ski/itinerary' },
+        { name: '可樂旅遊', url: 'https://www.colatour.com.tw/' },
+        { name: '東南旅遊', url: 'https://www.settour.com.tw/act/theme/sport/skiing.html' },
+        { name: '五福旅遊', url: 'https://event.lifetour.com.tw/ski' },
+      ],
+    },
+    {
+      type: '半自助（平台訂）',
+      emoji: '🎯',
+      total: 'NT$30,000 ～ 45,000',
+      color: '#3b82f6',
+      items: [
+        { label: '機票', cost: 'NT$8,000-15,000（廉航促銷～傳航）' },
+        { label: '住宿', cost: 'NT$8,000-14,000（4晚商旅或溫泉）' },
+        { label: '交通', cost: 'NT$2,000-4,000（JR + 巴士）' },
+        { label: '雪票', cost: 'NT$4,000-7,000（2-3天）' },
+        { label: '教練', cost: 'NT$3,000-6,000（Klook/KKday 一日遊含教練）' },
+        { label: '餐食', cost: 'NT$4,000-6,000' },
+      ],
+      pros: ['行程自由', '可挑雪場', '透過平台有保障', '教練課可單獨加購'],
+      cons: ['需做基本功課', '語言可能有障礙', '需自行安排交通'],
+      platforms: [
+        { name: 'KKday 手稻一日遊（含中文教練）', url: 'https://www.kkday.com/en-us/product/157140?cid=14336' },
+        { name: 'KKday 盤溪一日遊（含中文教練）', url: 'https://www.kkday.com/en-us/product/17983?cid=14336' },
+        { name: 'Klook 札幌國際一日遊', url: 'https://www.klook.com/en-US/activity/127172?aid=30600' },
+        { name: 'KKday 中文私人教練（北海道）', url: 'https://www.kkday.com/en-us/product/151716?cid=14336' },
+        { name: 'Agoda 住宿比價', url: 'https://www.agoda.com/' },
+      ],
+    },
+    {
+      type: '全自助',
+      emoji: '🎒',
+      total: 'NT$22,000 ～ 35,000',
+      color: '#22c55e',
+      items: [
+        { label: '機票', cost: 'NT$6,000-12,000（廉航促銷搶票）' },
+        { label: '住宿', cost: 'NT$5,000-10,000（青旅/民宿/合租）' },
+        { label: '交通', cost: 'NT$2,000-4,000' },
+        { label: '雪票', cost: 'NT$3,500-6,000（善用早鳥+線上折扣）' },
+        { label: '教練', cost: 'NT$0-5,000（日文團體課或自學）' },
+        { label: '餐食', cost: 'NT$3,000-5,000（超商+平價食堂）' },
+      ],
+      pros: ['最省錢', '完全自由', '可深度探索多座雪場'],
+      cons: ['需大量做功課', '遇問題自己解決', '需基本日文或英文能力'],
+      platforms: [
+        { name: 'Google Flights 機票比價', url: 'https://www.google.com/travel/flights' },
+        { name: 'Skyscanner 機票搜尋', url: 'https://www.skyscanner.com/' },
+        { name: 'Booking.com 住宿', url: 'https://www.booking.com/' },
+        { name: 'WAmazing Snow 雪票', url: 'https://www.wamazing.com/snow/' },
+      ],
+    },
+  ],
+}
+
 // 滑雪行程規劃範例
 export const itineraries = [
   {
@@ -1254,8 +1340,9 @@ export const itineraries = [
     badge: '人少粉雪',
     badgeColor: '#3b82f6',
     budget: {
-      total: '約 NT$25,000-32,000/人',
-      breakdown: '機票 NT$8,000-12,000 + 住宿 NT$6,000-8,000 + 雪票 NT$3,000-4,000 + 交通餐食 NT$5,000-8,000',
+      total: '約 NT$30,000-42,000/人（淡季自助）',
+      breakdown: '機票 NT$8,000-14,000 + 住宿 NT$8,000-12,000 + 雪票 NT$3,000-5,000 + 交通餐食 NT$8,000-12,000',
+      note: '⚠️ 旺季（春節/跨年）預算需 ×1.5 倍',
     },
     accommodation: {
       name: 'OMO7 旭川 by 星野集團',
@@ -1331,8 +1418,9 @@ export const itineraries = [
     badge: '交通最便利',
     badgeColor: '#ef4444',
     budget: {
-      total: '約 NT$28,000-38,000/人',
-      breakdown: '機票 NT$8,000-12,000 + 住宿 NT$8,000-12,000 + 雪票 NT$5,000-7,000 + 交通餐食 NT$7,000-10,000',
+      total: '約 NT$33,000-48,000/人（淡季自助）',
+      breakdown: '機票 NT$8,000-14,000 + 住宿 NT$10,000-16,000 + 雪票 NT$5,000-8,000 + 交通餐食 NT$10,000-14,000',
+      note: '⚠️ 札幌住宿＋餐費較旭川高。旺季預算需 ×1.5 倍',
     },
     accommodation: {
       name: '薄野或札幌站周邊商旅',
@@ -1411,8 +1499,9 @@ export const itineraries = [
     badge: '最省方案',
     badgeColor: '#22c55e',
     budget: {
-      total: '約 NT$15,000-20,000/人',
-      breakdown: '機票 NT$6,000-9,000（廉航促銷）+ 住宿 NT$3,000-4,000 + 雪票 NT$2,500-3,500 + 其他 NT$3,000-5,000',
+      total: '約 NT$18,000-25,000/人（淡季廉航促銷）',
+      breakdown: '機票 NT$6,000-10,000（廉航促銷價）+ 住宿 NT$4,000-6,000 + 雪票 NT$2,500-4,000 + 其他 NT$4,000-6,000',
+      note: '⚠️ 需搶到廉航促銷票才有此價格。一般時段約 NT$23,000-30,000',
     },
     accommodation: {
       name: '膠囊旅館或青年旅舍',
@@ -1619,6 +1708,7 @@ export const instructorGuide = {
       booking: '追雪 Chase for Snow（二世谷官方認證）/ Jstyle 中文滑雪學校（手稻・TOMAMU・留壽都）/ MY CASA（札幌國際）/ 雪浪 Snow and Flow / Pinnacle Snowsports / Klook・KKday 線上預約',
       notes: '北海道中文教練全天私人課約 ¥80,000～90,000（1對1），每加1人加 ¥5,000，最多約 4-6 人。半天(3hr)約 ¥40,000～55,000。旺季更貴。費用僅含教學，纜車票、裝備、保險另計。建議多人分攤費用最划算（4人分攤≈每人 ¥20,000～25,000/全天）。',
       schools: [
+        { name: 'SKIDIY 自助滑雪', url: 'https://diy.ski/', areas: 'TOMAMU・留壽都・富良野・藻岩山等', cert: '中文教練媒合平台，最多6人一班' },
         { name: '追雪 Chase for Snow', url: 'https://chaseforsnow.com/', areas: '二世谷・留壽都・喜樂樂・手稻', cert: '二世谷官方認證，Level 3 單板 + Level 4 雙板中文教練' },
         { name: 'Jstyle 中文滑雪學校', url: 'https://www.jstyleski.com/', areas: 'TOMAMU・手稻・二世谷・留壽都・藏王', cert: '雪場官方合作' },
         { name: 'MY CASA 滑雪學校', url: 'https://www.mycasa.jp/', areas: '札幌國際・手稻', cert: '國際+日本 SAJ/JSBA 認證' },
